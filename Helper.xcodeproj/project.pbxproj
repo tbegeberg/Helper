@@ -12,7 +12,7 @@
 		936B7C872111B381009686F6 /* ServerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936B7C862111B381009686F6 /* ServerError.swift */; };
 		936B7C892111B3A1009686F6 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936B7C882111B3A1009686F6 /* NetworkError.swift */; };
 		936B7C8B2111B3B2009686F6 /* NetworkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936B7C8A2111B3B2009686F6 /* NetworkHandler.swift */; };
-		936CF08A210B62CC00B7F559 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936CF089210B62CC00B7F559 /* Profile.swift */; };
+		936CF08A210B62CC00B7F559 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936CF089210B62CC00B7F559 /* User.swift */; };
 		936CF08E210B640000B7F559 /* TypeAlias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936CF08D210B640000B7F559 /* TypeAlias.swift */; };
 		9385788D2117769C00AF2106 /* ModelNetworkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9385788C2117769C00AF2106 /* ModelNetworkHandler.swift */; };
 		93B95D01210DB6C5007E57E4 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B95CFD210DB6C4007E57E4 /* Location.swift */; };
@@ -33,7 +33,7 @@
 		936B7C862111B381009686F6 /* ServerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerError.swift; sourceTree = "<group>"; };
 		936B7C882111B3A1009686F6 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		936B7C8A2111B3B2009686F6 /* NetworkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHandler.swift; sourceTree = "<group>"; };
-		936CF089210B62CC00B7F559 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Profile.swift; path = VaporHelper/Sources/App/Models/Profile.swift; sourceTree = SOURCE_ROOT; };
+		936CF089210B62CC00B7F559 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = VaporHelper/Sources/App/Models/User.swift; sourceTree = SOURCE_ROOT; };
 		936CF08D210B640000B7F559 /* TypeAlias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAlias.swift; sourceTree = "<group>"; };
 		9385788C2117769C00AF2106 /* ModelNetworkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelNetworkHandler.swift; sourceTree = "<group>"; };
 		93B95CFD210DB6C4007E57E4 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Location.swift; path = VaporHelper/Sources/App/Models/Location.swift; sourceTree = SOURCE_ROOT; };
@@ -119,7 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				9385788C2117769C00AF2106 /* ModelNetworkHandler.swift */,
-				936CF089210B62CC00B7F559 /* Profile.swift */,
+				936CF089210B62CC00B7F559 /* User.swift */,
 				936B7C812111B353009686F6 /* Helping.swift */,
 				93B95D00210DB6C5007E57E4 /* Assignment.swift */,
 				93B95CFD210DB6C4007E57E4 /* Location.swift */,
@@ -227,7 +227,7 @@
 				9385788D2117769C00AF2106 /* ModelNetworkHandler.swift in Sources */,
 				93B95D01210DB6C5007E57E4 /* Location.swift in Sources */,
 				936B7C892111B3A1009686F6 /* NetworkError.swift in Sources */,
-				936CF08A210B62CC00B7F559 /* Profile.swift in Sources */,
+				936CF08A210B62CC00B7F559 /* User.swift in Sources */,
 				936B7C872111B381009686F6 /* ServerError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

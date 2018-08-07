@@ -17,21 +17,21 @@ protocol ModelNetworkHandler {
 }
 
 
-extension Profile: ModelNetworkHandler {
+extension User: ModelNetworkHandler {
    
-    typealias T = Profile
+    typealias T = User
     
-    func get(completionHandler: @escaping (Result<[Profile]>) -> ()) {
-        NetworkHandler.shared.get(url: "http://localhost:8080/getProfile", completionHandler: completionHandler)
+    func get(completionHandler: @escaping (Result<[User]>) -> ()) {
+        NetworkHandler.shared.get(url: "http://localhost:8080/getUser", completionHandler: completionHandler)
     }
-    func post(model: Profile, completionHandler: @escaping (Result<Profile>) -> ()) {
-        NetworkHandler.shared.post(post: model, url: "http://localhost:8080/postProfile", completionHandler: completionHandler)
+    func post(model: User, completionHandler: @escaping (Result<User>) -> ()) {
+        NetworkHandler.shared.post(post: model, url: "http://localhost:8080/postUser", completionHandler: completionHandler)
     }
-    func delete(id: HelperContentID, completionHandler: @escaping (Result<Profile>) -> ()) {
-        NetworkHandler.shared.delete(url: "http://localhost:8080/deleteProfile/\(id)", completionHandler: completionHandler)
+    func delete(id: HelperContentID, completionHandler: @escaping (Result<User>) -> ()) {
+        NetworkHandler.shared.delete(url: "http://localhost:8080/deleteUser/\(id)", completionHandler: completionHandler)
     }
-    func patch(model: Profile, completionHandler: @escaping (Result<Profile>) -> ()) {
-        NetworkHandler.shared.patch(post: model, url: "http://localhost:8080/patchProfile", completionHandler: completionHandler)
+    func patch(model: User, completionHandler: @escaping (Result<User>) -> ()) {
+        NetworkHandler.shared.patch(post: model, url: "http://localhost:8080/patchUser", completionHandler: completionHandler)
     }
 }
 

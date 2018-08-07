@@ -27,7 +27,7 @@ class ViewController: UIViewController, CodableImage {
         let image = self.encodeImage(image: pic!)
         let location = Location(id: nil, latitude: 40.22, longitude: 20.2)
         
-        let profile = Profile(id: 19, helperReviews: nil, beneficiaryReviews: nil, image: image, location: location)
+        let user = User(id: 19, helperReviews: nil, beneficiaryReviews: nil, image: image, location: location)
         let assignment = Assignment(id: nil, beneficiaryID: UUID(), assignmentID: UUID(), location: location, headline: "NEED HELP", requirements: "TOOLS", image: nil)
         
         assignment.post(model: assignment) { (result:Result<Assignment>) in
@@ -43,7 +43,7 @@ class ViewController: UIViewController, CodableImage {
             }
         }
         /*
-        profile.patch(model: profile) { (result:Result<Profile>) in
+        profile.patch(model: profile) { (result:Result<User>) in
             switch result {
             case .success(let value):
                 print(value)
@@ -57,7 +57,7 @@ class ViewController: UIViewController, CodableImage {
         }
         
         
-        profile.get { (result:Result<[Profile]>) in
+        profile.get { (result:Result<[User]>) in
             switch result {
             case .success(let value):
                 print(value)

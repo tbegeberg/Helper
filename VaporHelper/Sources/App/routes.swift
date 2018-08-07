@@ -7,11 +7,11 @@ public func routes(_ router: Router) throws {
         return "Hello, world!"
     }
 
-    let profileController = ProfileController()
-    router.get("getProfile", use: profileController.index)
-    router.post("postProfile", use: profileController.create)
-    router.patch("patchProfile", use: profileController.patch)
-    router.delete("deleteProfile", Profile.parameter, use: profileController.delete)
+    let userController = UserController()
+    router.get("getUser", use: userController.index)
+    router.post("postUser", use: userController.create)
+    router.patch("patchUser", use: userController.patch)
+    router.delete("deleteUser", User.parameter, use: userController.delete)
     
     let assignmentController = AssignmentController()
     router.get("getAssignment", use: assignmentController.index)
