@@ -9,5 +9,5 @@
 import Foundation
 
 typealias HelperContent = Codable
-
+typealias HelperContentID = Int
 

@@ -9,7 +9,7 @@ import Foundation
 
 struct Assignment: HelperContent {
     var id: Int?
-    let ownerID: UUID
+    let beneficiaryID: UUID
     let assignmentID: UUID
     let location: Location
     let headline: String

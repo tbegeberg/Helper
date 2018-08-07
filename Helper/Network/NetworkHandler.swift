@@ -32,6 +32,14 @@ class NetworkHandler {
         task.resume()
     }
     
+    func patch<T: Codable> (post: T, url: String, completionHandler: @escaping (Result<T>)->()) {
+        let jsonData = self.encode(post: post, completionHandler: completionHandler)
+        var request = createRequest(url: url, method: "PATCH")
+        request.httpBody = jsonData
+        let task = self.task(request: request, completionHandler: completionHandler)
+        task.resume()
+    }
+    
     func createRequest (url: String, method: String) -> URLRequest {
         guard let url = URL(string: url) else { fatalError("Could not create URL from components") }
         var request = URLRequest(url: url)

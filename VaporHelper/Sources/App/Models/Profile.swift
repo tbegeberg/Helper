@@ -8,27 +8,15 @@
 import Foundation
 
 struct Profile: HelperContent {
-    var id: Int? 
-    let profileID: UUID
+    var id: Int?
+    let profileID: UUID = UUID()
     let helperReviews: [Review]?
     let beneficiaryReviews: [Review]?
     let image: Data
     let location: Location
-
-    init(helperReviews: [Review]?, beneficiaryReviews: [Review]?, image: Data, location: Location ) {
-        self.id = nil
-        self.profileID = UUID()
-        self.helperReviews = helperReviews
-        self.beneficiaryReviews = beneficiaryReviews
-        self.image = image
-        self.location = location
-    }
-
-
-    
 }
 
 
 
 
-
+ 

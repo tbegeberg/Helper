@@ -6,7 +6,6 @@
 //
 
 import Foundation
-
 import Vapor
 
 class BaseController<T: HelperContent> {

@@ -25,18 +25,12 @@ class ViewController: UIViewController, CodableImage {
         
         let pic = UIImage(named: "profile")
         let image = self.encodeImage(image: pic!)
-        let location = Location(latitude: 40.22, longitude: 100.2)
+        let location = Location(id: nil, latitude: 40.22, longitude: 20.2)
         
-
-        let profile = Profile(helperReviews: nil, beneficiaryReviews: nil, image: image, location: location)
-        //self.postProfiles(profile: profile)
-        //self.getProfiles()
-        self.deleteProfile(id: 18)
+        let profile = Profile(id: 19, helperReviews: nil, beneficiaryReviews: nil, image: image, location: location)
+        let assignment = Assignment(id: nil, beneficiaryID: UUID(), assignmentID: UUID(), location: location, headline: "NEED HELP", requirements: "TOOLS", image: nil)
         
-    }
-    
-    func postProfiles(profile: Profile) {
-        NetworkHandler.shared.post(post: profile, url: "http://localhost:8080/postProfile") { (result:Result<Profile>) in
+        assignment.post(model: assignment) { (result:Result<Assignment>) in
             switch result {
             case .success(let value):
                 print(value)
@@ -44,30 +38,12 @@ class ViewController: UIViewController, CodableImage {
                 print(error)
             case .serverError(let error):
                 print(error)
-            case .successNoValue(_):
-                print("No value")
-            }
-        }
-    }
-    
-    func getProfiles() {
-        NetworkHandler.shared.get(url: "http://localhost:8080/getProfile") { (result:Result<[Profile]>) in
-            switch result {
-            case .success(let value):
+            case .successNoValue(let value):
                 print(value)
-            case .error(let error):
-                print(error)
-            case .serverError(let error):
-                print(error)
-            case .successNoValue(_):
-                print("No value")
             }
-            
         }
-    }
-    
-    func deleteProfile(id: Int) {
-        NetworkHandler.shared.delete(url: "http://localhost:8080/deleteProfile/\(id)") { (result:Result<Profile>) in
+        /*
+        profile.patch(model: profile) { (result:Result<Profile>) in
             switch result {
             case .success(let value):
                 print(value)
@@ -80,7 +56,22 @@ class ViewController: UIViewController, CodableImage {
             }
         }
         
+        
+        profile.get { (result:Result<[Profile]>) in
+            switch result {
+            case .success(let value):
+                print(value)
+            case .error(let error):
+                print(error)
+            case .serverError(let error):
+                print(error)
+            case .successNoValue(let value):
+                print(value)
+            }
+        }
+        */
     }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
