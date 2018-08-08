@@ -8,7 +8,10 @@
 
 import Vapor
 import FluentMySQL
+import Authentication
 
 protocol HelperContent: MySQLModel, Content, Migration, Parameter {
     
 }
+
+

@@ -17,22 +17,12 @@ protocol ModelNetworkHandler {
 }
 
 
-extension User: ModelNetworkHandler {
-   
-    typealias T = User
+extension User {
+
+    func createUser(model: User, completionHandler: @escaping (Result<User>) -> ()) {
+        NetworkHandler.shared.post(post: model, url: "http://localhost:8080/createUser", completionHandler: completionHandler)
+    }
     
-    func get(completionHandler: @escaping (Result<[User]>) -> ()) {
-        NetworkHandler.shared.get(url: "http://localhost:8080/getUser", completionHandler: completionHandler)
-    }
-    func post(model: User, completionHandler: @escaping (Result<User>) -> ()) {
-        NetworkHandler.shared.post(post: model, url: "http://localhost:8080/postUser", completionHandler: completionHandler)
-    }
-    func delete(id: HelperContentID, completionHandler: @escaping (Result<User>) -> ()) {
-        NetworkHandler.shared.delete(url: "http://localhost:8080/deleteUser/\(id)", completionHandler: completionHandler)
-    }
-    func patch(model: User, completionHandler: @escaping (Result<User>) -> ()) {
-        NetworkHandler.shared.patch(post: model, url: "http://localhost:8080/patchUser", completionHandler: completionHandler)
-    }
 }
 
 extension Helping: ModelNetworkHandler {

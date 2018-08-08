@@ -9,12 +9,11 @@ import Foundation
 
 struct User: HelperContent {
     var id: Int?
-    let userID: UUID = UUID()
-    let helperReviews: [Review]?
-    let beneficiaryReviews: [Review]?
-    let image: Data
-    let location: Location
+    var username: String
+    var password: String
+    
 }
+
 
 
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9322AFB4211B5A990014D068 /* User+PublicUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9322AFB3211B5A990014D068 /* User+PublicUser.swift */; };
 		936B7C822111B353009686F6 /* Helping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936B7C812111B353009686F6 /* Helping.swift */; };
 		936B7C842111B369009686F6 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936B7C832111B369009686F6 /* Result.swift */; };
 		936B7C872111B381009686F6 /* ServerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936B7C862111B381009686F6 /* ServerError.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9322AFB3211B5A990014D068 /* User+PublicUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+PublicUser.swift"; sourceTree = "<group>"; };
 		936B7C812111B353009686F6 /* Helping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Helping.swift; path = VaporHelper/Sources/App/Models/Helping.swift; sourceTree = SOURCE_ROOT; };
 		936B7C832111B369009686F6 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		936B7C862111B381009686F6 /* ServerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerError.swift; sourceTree = "<group>"; };
@@ -70,6 +72,14 @@
 				936B7C882111B3A1009686F6 /* NetworkError.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		9322AFB2211B5A7D0014D068 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9322AFB3211B5A990014D068 /* User+PublicUser.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		93B95D05210DB6EF007E57E4 /* TypeAlias */ = {
@@ -124,6 +134,7 @@
 				93B95D00210DB6C5007E57E4 /* Assignment.swift */,
 				93B95CFD210DB6C4007E57E4 /* Location.swift */,
 				93B95CFF210DB6C4007E57E4 /* Review.swift */,
+				9322AFB2211B5A7D0014D068 /* Extensions */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -217,6 +228,7 @@
 			files = (
 				936B7C8B2111B3B2009686F6 /* NetworkHandler.swift in Sources */,
 				93B95D04210DB6C5007E57E4 /* Assignment.swift in Sources */,
+				9322AFB4211B5A990014D068 /* User+PublicUser.swift in Sources */,
 				93EE04382108A86400005E61 /* ViewController.swift in Sources */,
 				936B7C822111B353009686F6 /* Helping.swift in Sources */,
 				93B95D03210DB6C5007E57E4 /* Review.swift in Sources */,
