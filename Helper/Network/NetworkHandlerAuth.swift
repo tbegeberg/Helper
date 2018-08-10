@@ -35,6 +35,12 @@ class NetworkHandlerAuth {
         task.resume()
     }
     
+    func deleteAuth<T: Codable> (url: String, token: String, completionHandler: @escaping (Result<T>)->()) {
+        let request = createRequestAuthToken(url: url, method: "DELETE", token: token)
+        let task = networkHandler.task(request: request, completionHandler: completionHandler)
+        task.resume()
+    }
+    
     func createRequestAuthToken (url: String, method: String, token: String) -> URLRequest {
         guard let url = URL(string: url) else { fatalError("Could not create URL from components") }
         var request = URLRequest(url: url)
