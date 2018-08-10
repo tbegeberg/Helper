@@ -27,10 +27,21 @@ class ViewController: UIViewController, CodableImage {
         let image = self.encodeImage(image: pic!)
         let location = Location(id: nil, latitude: 40.22, longitude: 20.2)
         
-        let user = User(id: nil, username: "Peter", password: "Password")
+        let user = User(id: nil, username: "Peter", password: "Password", userID: UUID())
         let assignment = Assignment(id: nil, beneficiaryID: UUID(), assignmentID: UUID(), location: location, headline: "NEED HELP", requirements: "TOOLS", image: nil)
         
-        
+        user.createUser(model: user) { (result: Result<User.PublicUser>) in
+            switch result {
+            case .success(let value):
+                print(value)
+            case .error(let error):
+                print(error)
+            case .serverError(let error):
+                print(error)
+            case .successNoValue(let value):
+                print(value)
+            }
+        }
    
 
         

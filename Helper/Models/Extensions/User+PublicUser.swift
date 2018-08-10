@@ -10,7 +10,8 @@ import Foundation
 
 extension User {
     struct PublicUser: Codable {
-        var username: String
-        var token: String
+        let username: String
+        let token: String
+        let userID: UUID
     }
 }

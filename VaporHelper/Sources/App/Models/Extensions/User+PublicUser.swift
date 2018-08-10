@@ -12,5 +12,6 @@ extension User {
     struct PublicUser: Content {
         var username: String
         var token: String
+        var userID: UUID
     }
 }
