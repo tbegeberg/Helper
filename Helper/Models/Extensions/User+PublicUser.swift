@@ -9,7 +9,7 @@
 import Foundation
 
 extension User {
-    struct PublicUser: HelperContent {
+    struct PublicUser: Codable {
         var username: String
         var token: String
     }

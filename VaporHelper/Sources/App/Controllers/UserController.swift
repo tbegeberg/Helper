@@ -10,7 +10,7 @@ import Vapor
 import Authentication
 
 final class UserController {
-    
+   
     func create(_ request: Request) throws -> Future<User.PublicUser> {
         return try request.content.decode(User.self).flatMap(to: User.PublicUser.self) { user in
             let passwordHashed = try request.make(BCryptDigest.self).hash(user.password)
@@ -31,6 +31,5 @@ final class UserController {
             return User.authenticate(username: user.username, password: user.password, using: passwordVerifier, on: request).unwrap(or: Abort.init(HTTPResponseStatus.unauthorized))
         }
     }
-    
 
 }

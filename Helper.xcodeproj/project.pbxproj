@@ -16,6 +16,7 @@
 		936CF08A210B62CC00B7F559 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936CF089210B62CC00B7F559 /* User.swift */; };
 		936CF08E210B640000B7F559 /* TypeAlias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936CF08D210B640000B7F559 /* TypeAlias.swift */; };
 		9385788D2117769C00AF2106 /* ModelNetworkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9385788C2117769C00AF2106 /* ModelNetworkHandler.swift */; };
+		9387A5C9211D7F9E00830EDB /* NetworkHandlerAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9387A5C8211D7F9E00830EDB /* NetworkHandlerAuth.swift */; };
 		93B95D01210DB6C5007E57E4 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B95CFD210DB6C4007E57E4 /* Location.swift */; };
 		93B95D03210DB6C5007E57E4 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B95CFF210DB6C4007E57E4 /* Review.swift */; };
 		93B95D04210DB6C5007E57E4 /* Assignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B95D00210DB6C5007E57E4 /* Assignment.swift */; };
@@ -38,6 +39,7 @@
 		936CF089210B62CC00B7F559 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = VaporHelper/Sources/App/Models/User.swift; sourceTree = SOURCE_ROOT; };
 		936CF08D210B640000B7F559 /* TypeAlias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAlias.swift; sourceTree = "<group>"; };
 		9385788C2117769C00AF2106 /* ModelNetworkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelNetworkHandler.swift; sourceTree = "<group>"; };
+		9387A5C8211D7F9E00830EDB /* NetworkHandlerAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHandlerAuth.swift; sourceTree = "<group>"; };
 		93B95CFD210DB6C4007E57E4 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Location.swift; path = VaporHelper/Sources/App/Models/Location.swift; sourceTree = SOURCE_ROOT; };
 		93B95CFF210DB6C4007E57E4 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Review.swift; path = VaporHelper/Sources/App/Models/Review.swift; sourceTree = SOURCE_ROOT; };
 		93B95D00210DB6C5007E57E4 /* Assignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Assignment.swift; path = VaporHelper/Sources/App/Models/Assignment.swift; sourceTree = SOURCE_ROOT; };
@@ -67,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				936B7C8A2111B3B2009686F6 /* NetworkHandler.swift */,
+				9387A5C8211D7F9E00830EDB /* NetworkHandlerAuth.swift */,
 				936B7C832111B369009686F6 /* Result.swift */,
 				936B7C862111B381009686F6 /* ServerError.swift */,
 				936B7C882111B3A1009686F6 /* NetworkError.swift */,
@@ -239,6 +242,7 @@
 				9385788D2117769C00AF2106 /* ModelNetworkHandler.swift in Sources */,
 				93B95D01210DB6C5007E57E4 /* Location.swift in Sources */,
 				936B7C892111B3A1009686F6 /* NetworkError.swift in Sources */,
+				9387A5C9211D7F9E00830EDB /* NetworkHandlerAuth.swift in Sources */,
 				936CF08A210B62CC00B7F559 /* User.swift in Sources */,
 				936B7C872111B381009686F6 /* ServerError.swift in Sources */,
 			);

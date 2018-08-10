@@ -19,8 +19,12 @@ protocol ModelNetworkHandler {
 
 extension User {
 
-    func createUser(model: User, completionHandler: @escaping (Result<User>) -> ()) {
+    func createUser(model: User, completionHandler: @escaping (Result<User.PublicUser>) -> ()) {
         NetworkHandler.shared.post(post: model, url: "http://localhost:8080/createUser", completionHandler: completionHandler)
+    }
+    
+    func login(model: User, completionHandler: @escaping (Result<User>) -> ()) {
+        NetworkHandler.shared.post(post: model, url: "http://localhost:8080/loginUser", completionHandler: completionHandler)
     }
     
 }

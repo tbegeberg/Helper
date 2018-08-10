@@ -30,22 +30,24 @@ class ViewController: UIViewController, CodableImage {
         let user = User(id: nil, username: "Peter", password: "Password")
         let assignment = Assignment(id: nil, beneficiaryID: UUID(), assignmentID: UUID(), location: location, headline: "NEED HELP", requirements: "TOOLS", image: nil)
         
-        user.createUser(model: user) { (result:Result<User>) in
-            switch result {
-            case .success(let value):
-                
-                print(value)
-            case .error(let error):
-                print(error)
-            case .serverError(let error):
-                print(error)
-            case .successNoValue(let value):
-                print(value)
-            }
-        }
         
+   
+
         
         /*
+         user.createUser(model: user) { (result: Result<User.PublicUser>) in
+         switch result {
+         case .success(let value):
+         print(value)
+         case .error(let error):
+         print(error)
+         case .serverError(let error):
+         print(error)
+         case .successNoValue(let value):
+         print(value)
+         }
+         }
+         
         profile.patch(model: profile) { (result:Result<User>) in
             switch result {
             case .success(let value):

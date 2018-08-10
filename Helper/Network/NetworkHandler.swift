@@ -18,7 +18,7 @@ class NetworkHandler {
         task.resume()
     }
     
-    func post<T: Codable> (post: T, url: String, completionHandler: @escaping (Result<T>)->()) {
+    func post<T: Codable, P: Codable> (post: T, url: String, completionHandler: @escaping (Result<P>)->()) {
         let jsonData = self.encode(post: post, completionHandler: completionHandler)
         var request = createRequest(url: url, method: "POST")
         request.httpBody = jsonData
@@ -48,7 +48,7 @@ class NetworkHandler {
         return request
     }
     
-    func encode<T: Codable>(post: T, completionHandler: @escaping (Result<T>)->()) -> Data {
+    func encode<T: Codable, P: Codable>(post: T, completionHandler: @escaping (Result<P>)->()) -> Data {
         let encoder = JSONEncoder()
         var data = Data()
         do {
@@ -59,7 +59,6 @@ class NetworkHandler {
         }
         return data
     }
-    
     
     func decode<T: Codable>(data: Data, completionHandler: @escaping (Result<T>)->()) {
         let decode = JSONDecoder()
