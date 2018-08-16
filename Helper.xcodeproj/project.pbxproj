@@ -20,6 +20,12 @@
 		93B95D01210DB6C5007E57E4 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B95CFD210DB6C4007E57E4 /* Location.swift */; };
 		93B95D03210DB6C5007E57E4 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B95CFF210DB6C4007E57E4 /* Review.swift */; };
 		93B95D04210DB6C5007E57E4 /* Assignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B95D00210DB6C5007E57E4 /* Assignment.swift */; };
+		93E3E3D3212422A300B3419E /* ViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E3E3D2212422A300B3419E /* ViewProvider.swift */; };
+		93E3E3D5212422DD00B3419E /* AppContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E3E3D4212422DD00B3419E /* AppContext.swift */; };
+		93E3E3D7212422FE00B3419E /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E3E3D6212422FE00B3419E /* State.swift */; };
+		93E3E3DC212427E300B3419E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E3E3DB212427E300B3419E /* LoginViewController.swift */; };
+		93E3E3DF21256F3A00B3419E /* UserLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E3E3DE21256F3A00B3419E /* UserLogin.swift */; };
+		93E3E3E9212573E200B3419E /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93E3E3E6212573D800B3419E /* SnapKit.framework */; };
 		93E56495210DC46B003F6957 /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 93E56494210DC46B003F6957 /* profile.png */; };
 		93EE04362108A86400005E61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EE04352108A86400005E61 /* AppDelegate.swift */; };
 		93EE04382108A86400005E61 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EE04372108A86400005E61 /* ViewController.swift */; };
@@ -28,6 +34,23 @@
 		93EE04402108A86500005E61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93EE043E2108A86500005E61 /* LaunchScreen.storyboard */; };
 		93EE06A7210B38F200005E61 /* CodableImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EE06A6210B38F200005E61 /* CodableImage.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		93E3E3E5212573D800B3419E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93E3E3E0212573D800B3419E /* SnapKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EEBCC9D819CC627D0083B827;
+			remoteInfo = SnapKit;
+		};
+		93E3E3E7212573D800B3419E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93E3E3E0212573D800B3419E /* SnapKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EEBCC9E219CC627E0083B827;
+			remoteInfo = "SnapKit Tests";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		9322AFB3211B5A990014D068 /* User+PublicUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+PublicUser.swift"; sourceTree = "<group>"; };
@@ -43,6 +66,12 @@
 		93B95CFD210DB6C4007E57E4 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Location.swift; path = VaporHelper/Sources/App/Models/Location.swift; sourceTree = SOURCE_ROOT; };
 		93B95CFF210DB6C4007E57E4 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Review.swift; path = VaporHelper/Sources/App/Models/Review.swift; sourceTree = SOURCE_ROOT; };
 		93B95D00210DB6C5007E57E4 /* Assignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Assignment.swift; path = VaporHelper/Sources/App/Models/Assignment.swift; sourceTree = SOURCE_ROOT; };
+		93E3E3D2212422A300B3419E /* ViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewProvider.swift; sourceTree = "<group>"; };
+		93E3E3D4212422DD00B3419E /* AppContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContext.swift; sourceTree = "<group>"; };
+		93E3E3D6212422FE00B3419E /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		93E3E3DB212427E300B3419E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		93E3E3DE21256F3A00B3419E /* UserLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLogin.swift; sourceTree = "<group>"; };
+		93E3E3E0212573D800B3419E /* SnapKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SnapKit.xcodeproj; path = Helper/SnapKit/SnapKit.xcodeproj; sourceTree = "<group>"; };
 		93E56494210DC46B003F6957 /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
 		93EE04322108A86400005E61 /* Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Helper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		93EE04352108A86400005E61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93E3E3E9212573E200B3419E /* SnapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +123,42 @@
 			path = TypeAlias;
 			sourceTree = "<group>";
 		};
+		93E3E3D02124210600B3419E /* State */ = {
+			isa = PBXGroup;
+			children = (
+				93E3E3D4212422DD00B3419E /* AppContext.swift */,
+				93E3E3D6212422FE00B3419E /* State.swift */,
+				93E3E3D82124241900B3419E /* States */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		93E3E3D82124241900B3419E /* States */ = {
+			isa = PBXGroup;
+			children = (
+				93E3E3DE21256F3A00B3419E /* UserLogin.swift */,
+			);
+			path = States;
+			sourceTree = "<group>";
+		};
+		93E3E3DA212427C300B3419E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				93E3E3DB212427E300B3419E /* LoginViewController.swift */,
+				93EE04372108A86400005E61 /* ViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		93E3E3E1212573D800B3419E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				93E3E3E6212573D800B3419E /* SnapKit.framework */,
+				93E3E3E8212573D800B3419E /* SnapKit Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		93EE04292108A86400005E61 = {
 			isa = PBXGroup;
 			children = (
@@ -113,11 +179,12 @@
 		93EE04342108A86400005E61 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				93EE04352108A86400005E61 /* AppDelegate.swift */,
+				93E3E3D02124210600B3419E /* State */,
+				93E3E3DA212427C300B3419E /* Views */,
 				93EE06A5210B38DD00005E61 /* Protocols */,
 				931728D9210F0D3C007F7F15 /* Network */,
 				93EE04492108A8BA00005E61 /* Models */,
-				93EE04352108A86400005E61 /* AppDelegate.swift */,
-				93EE04372108A86400005E61 /* ViewController.swift */,
 				93EE04392108A86400005E61 /* Main.storyboard */,
 				93EE043C2108A86500005E61 /* Assets.xcassets */,
 				93EE043E2108A86500005E61 /* LaunchScreen.storyboard */,
@@ -145,6 +212,7 @@
 		93EE044F2108AB2400005E61 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				93E3E3E0212573D800B3419E /* SnapKit.xcodeproj */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -153,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				93EE06A6210B38F200005E61 /* CodableImage.swift */,
+				93E3E3D2212422A300B3419E /* ViewProvider.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -203,12 +272,35 @@
 			mainGroup = 93EE04292108A86400005E61;
 			productRefGroup = 93EE04332108A86400005E61 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 93E3E3E1212573D800B3419E /* Products */;
+					ProjectRef = 93E3E3E0212573D800B3419E /* SnapKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				93EE04312108A86400005E61 /* Helper */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		93E3E3E6212573D800B3419E /* SnapKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SnapKit.framework;
+			remoteRef = 93E3E3E5212573D800B3419E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		93E3E3E8212573D800B3419E /* SnapKit Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SnapKit Tests.xctest";
+			remoteRef = 93E3E3E7212573D800B3419E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		93EE04302108A86400005E61 /* Resources */ = {
@@ -229,6 +321,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93E3E3DF21256F3A00B3419E /* UserLogin.swift in Sources */,
 				936B7C8B2111B3B2009686F6 /* NetworkHandler.swift in Sources */,
 				93B95D04210DB6C5007E57E4 /* Assignment.swift in Sources */,
 				9322AFB4211B5A990014D068 /* User+PublicUser.swift in Sources */,
@@ -236,10 +329,14 @@
 				936B7C822111B353009686F6 /* Helping.swift in Sources */,
 				93B95D03210DB6C5007E57E4 /* Review.swift in Sources */,
 				936CF08E210B640000B7F559 /* TypeAlias.swift in Sources */,
+				93E3E3D5212422DD00B3419E /* AppContext.swift in Sources */,
+				93E3E3DC212427E300B3419E /* LoginViewController.swift in Sources */,
 				93EE06A7210B38F200005E61 /* CodableImage.swift in Sources */,
 				936B7C842111B369009686F6 /* Result.swift in Sources */,
+				93E3E3D7212422FE00B3419E /* State.swift in Sources */,
 				93EE04362108A86400005E61 /* AppDelegate.swift in Sources */,
 				9385788D2117769C00AF2106 /* ModelNetworkHandler.swift in Sources */,
+				93E3E3D3212422A300B3419E /* ViewProvider.swift in Sources */,
 				93B95D01210DB6C5007E57E4 /* Location.swift in Sources */,
 				936B7C892111B3A1009686F6 /* NetworkError.swift in Sources */,
 				9387A5C9211D7F9E00830EDB /* NetworkHandlerAuth.swift in Sources */,

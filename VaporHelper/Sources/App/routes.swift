@@ -8,12 +8,13 @@ public func routes(_ router: Router) throws {
         return "Hello, world!"
     }
 
+    let assignmentController = AssignmentController()
+    let helpController = HelpingController()
+    
     let userController = UserController()
     router.post("createUser", use: userController.create)
     router.post("loginUser", use: userController.loginUser)
 
-    let assignmentController = AssignmentController()
-    let helpController = HelpingController()
     let tokenAuthenticationMiddleware = User.tokenAuthMiddleware()
     let guardAuthentication = User.guardAuthMiddleware()
     let authedRoutes = router.grouped([tokenAuthenticationMiddleware, guardAuthentication])

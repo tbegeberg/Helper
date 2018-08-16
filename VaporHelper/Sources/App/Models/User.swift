@@ -12,6 +12,7 @@ struct User: HelperContent {
     var username: String
     var password: String
     let userID: UUID
+    let image: Data
 }
 
 
