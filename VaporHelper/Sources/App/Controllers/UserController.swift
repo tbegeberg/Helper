@@ -18,7 +18,10 @@ final class UserController {
             return newUser.save(on: request).flatMap(to: User.PublicUser.self) { createdUser in
                 let accessToken = try Token.createToken(forUser: createdUser)
                 return accessToken.save(on: request).map(to: User.PublicUser.self) { createdToken in
-                    let publicUser = User.PublicUser(username: createdUser.username, token: createdToken.token, userID: createdUser.userID)
+                    guard let userID = createdToken.userId as? UUID else {
+                        throw "Missing userID"
+                    }
+                    let publicUser = User.PublicUser(username: createdUser.username, token: createdToken.token, userID: userID)
                     return publicUser
                 }
             }
@@ -32,4 +35,8 @@ final class UserController {
         }
     }
 
+}
+
+extension String: LocalizedError {
+    public var errorDescription: String? { return self }
 }

@@ -11,8 +11,8 @@ struct User: HelperContent {
     var id: Int?
     var username: String
     var password: String
-    let userID: UUID
-    let image: Data
+    let userID: UUID?
+    let image: Data?
 }
 
 

@@ -34,8 +34,7 @@ class ViewController: UIViewController, CodableImage {
         let user = User(id: nil, username: "Lars", password: "Password", userID: UUID(), image: image)
         let assignment = Assignment(id: nil, beneficiaryID: UUID(), assignmentID: UUID(), location: location, headline: "NEED HELP", requirements: "TOOLS", image: nil)
         
-        
-        
+
          
         user.createUser(model: user) { (result: Result<User.PublicUser>) in
             switch result {
