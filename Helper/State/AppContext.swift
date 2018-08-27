@@ -8,8 +8,14 @@
 
 import Foundation
 
-protocol AppContext {
+protocol AppContext: AuthenticationViewResponder {
     var state:State? { get set }
     func present(view: ViewProvider)
     func changeState(state: State)
+}
+
+extension ButtonClickedResponder where Self:AppContext {
+    func buttonClicked(user: User.PublicUser) {
+        self.state?.buttonClicked(context: self, user: user)
+    }
 }

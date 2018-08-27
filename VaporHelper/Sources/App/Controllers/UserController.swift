@@ -14,14 +14,14 @@ final class UserController {
     func create(_ request: Request) throws -> Future<User.PublicUser> {
         return try request.content.decode(User.self).flatMap(to: User.PublicUser.self) { user in
             let passwordHashed = try request.make(BCryptDigest.self).hash(user.password)
-            let newUser = User(id: nil, username: user.username, password: passwordHashed, userID: user.userID, image: user.image)
+            let newUser = User(id: nil, username: user.username, password: passwordHashed, userID: user.userID)
             return newUser.save(on: request).flatMap(to: User.PublicUser.self) { createdUser in
                 let accessToken = try Token.createToken(forUser: createdUser)
+                guard let userIDE = createdUser.userID as? UUID else {
+                    throw "Missing userID"
+                }
                 return accessToken.save(on: request).map(to: User.PublicUser.self) { createdToken in
-                    guard let userID = createdToken.userId as? UUID else {
-                        throw "Missing userID"
-                    }
-                    let publicUser = User.PublicUser(username: createdUser.username, token: createdToken.token, userID: userID)
+                    let publicUser = User.PublicUser(username: createdUser.username, token: createdToken.token, userID: userIDE)
                     return publicUser
                 }
             }

@@ -12,4 +12,5 @@ protocol State {
     func forward(context: AppContext)
     func back(context: AppContext)
     func enterState(context: AppContext)
+    func buttonClicked(context: AppContext, user: User.PublicUser)
 }

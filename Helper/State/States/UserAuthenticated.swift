@@ -1,15 +1,20 @@
 //
-//  Login.swift
+//  UserAuthenticated.swift
 //  Helper
 //
-//  Created by TørK on 16/08/2018.
+//  Created by TørK on 23/08/2018.
 //  Copyright © 2018 Tørk Egeberg. All rights reserved.
 //
 
 import Foundation
-import UIKit
 
-class UserLogin: State {
+class UserAuthenticated: State {
+  
+    var user: User.PublicUser
+    
+    init(user: User.PublicUser) {
+        self.user = user
+    }
     
     func forward(context: AppContext) {
         
@@ -20,14 +25,14 @@ class UserLogin: State {
     }
     
     func enterState(context: AppContext) {
-        let responder: AuthenticationViewResponder = context
-        let view = LoginViewController()
-        view.responder = responder
-        context.present(view: view)
+        print("Changed")
     }
     
     func buttonClicked(context: AppContext, user: User.PublicUser) {
-        context.changeState(state: UserAuthenticated(user: user))
+        
     }
-    
 }
+
+
+
+
