@@ -10,7 +10,7 @@
 		9322AFB4211B5A990014D068 /* User+PublicUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9322AFB3211B5A990014D068 /* User+PublicUser.swift */; };
 		9355B92A212ECF9300453262 /* TextViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9355B929212ECF9300453262 /* TextViewFactory.swift */; };
 		9355B92D212ED20800453262 /* UIControlFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9355B92C212ED20800453262 /* UIControlFactory.swift */; };
-		9355B931212EDB7800453262 /* CreateUseLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9355B930212EDB7800453262 /* CreateUseLogin.swift */; };
+		9355B931212EDB7800453262 /* CreateLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9355B930212EDB7800453262 /* CreateLogin.swift */; };
 		9355B934212EDFE000453262 /* UserAuthenticated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9355B933212EDFE000453262 /* UserAuthenticated.swift */; };
 		9355B938212EE1A600453262 /* ButtonClickedResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9355B937212EE1A600453262 /* ButtonClickedResponder.swift */; };
 		936B7C822111B353009686F6 /* Helping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936B7C812111B353009686F6 /* Helping.swift */; };
@@ -32,7 +32,7 @@
 		93E3E3D5212422DD00B3419E /* AppContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E3E3D4212422DD00B3419E /* AppContext.swift */; };
 		93E3E3D7212422FE00B3419E /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E3E3D6212422FE00B3419E /* State.swift */; };
 		93E3E3DC212427E300B3419E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E3E3DB212427E300B3419E /* LoginViewController.swift */; };
-		93E3E3DF21256F3A00B3419E /* UserLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E3E3DE21256F3A00B3419E /* UserLogin.swift */; };
+		93E3E3DF21256F3A00B3419E /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E3E3DE21256F3A00B3419E /* Login.swift */; };
 		93E3E3E9212573E200B3419E /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93E3E3E6212573D800B3419E /* SnapKit.framework */; };
 		93E56495210DC46B003F6957 /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 93E56494210DC46B003F6957 /* profile.png */; };
 		93EE04362108A86400005E61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EE04352108A86400005E61 /* AppDelegate.swift */; };
@@ -64,7 +64,7 @@
 		9322AFB3211B5A990014D068 /* User+PublicUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+PublicUser.swift"; sourceTree = "<group>"; };
 		9355B929212ECF9300453262 /* TextViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewFactory.swift; sourceTree = "<group>"; };
 		9355B92C212ED20800453262 /* UIControlFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIControlFactory.swift; sourceTree = "<group>"; };
-		9355B930212EDB7800453262 /* CreateUseLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUseLogin.swift; sourceTree = "<group>"; };
+		9355B930212EDB7800453262 /* CreateLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLogin.swift; sourceTree = "<group>"; };
 		9355B933212EDFE000453262 /* UserAuthenticated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthenticated.swift; sourceTree = "<group>"; };
 		9355B937212EE1A600453262 /* ButtonClickedResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonClickedResponder.swift; sourceTree = "<group>"; };
 		936B7C812111B353009686F6 /* Helping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Helping.swift; path = VaporHelper/Sources/App/Models/Helping.swift; sourceTree = SOURCE_ROOT; };
@@ -86,7 +86,7 @@
 		93E3E3D4212422DD00B3419E /* AppContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContext.swift; sourceTree = "<group>"; };
 		93E3E3D6212422FE00B3419E /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		93E3E3DB212427E300B3419E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		93E3E3DE21256F3A00B3419E /* UserLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLogin.swift; sourceTree = "<group>"; };
+		93E3E3DE21256F3A00B3419E /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		93E3E3E0212573D800B3419E /* SnapKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SnapKit.xcodeproj; path = Helper/SnapKit/SnapKit.xcodeproj; sourceTree = "<group>"; };
 		93E56494210DC46B003F6957 /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
 		93EE04322108A86400005E61 /* Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Helper.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -169,8 +169,8 @@
 		93E3E3D82124241900B3419E /* States */ = {
 			isa = PBXGroup;
 			children = (
-				93E3E3DE21256F3A00B3419E /* UserLogin.swift */,
-				9355B930212EDB7800453262 /* CreateUseLogin.swift */,
+				93E3E3DE21256F3A00B3419E /* Login.swift */,
+				9355B930212EDB7800453262 /* CreateLogin.swift */,
 				9355B933212EDFE000453262 /* UserAuthenticated.swift */,
 			);
 			path = States;
@@ -361,7 +361,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93E3E3DF21256F3A00B3419E /* UserLogin.swift in Sources */,
+				93E3E3DF21256F3A00B3419E /* Login.swift in Sources */,
 				936B7C8B2111B3B2009686F6 /* NetworkHandler.swift in Sources */,
 				93B95D04210DB6C5007E57E4 /* Assignment.swift in Sources */,
 				9322AFB4211B5A990014D068 /* User+PublicUser.swift in Sources */,
@@ -388,7 +388,7 @@
 				9387A5C9211D7F9E00830EDB /* NetworkHandlerAuth.swift in Sources */,
 				936CF08A210B62CC00B7F559 /* User.swift in Sources */,
 				9355B938212EE1A600453262 /* ButtonClickedResponder.swift in Sources */,
-				9355B931212EDB7800453262 /* CreateUseLogin.swift in Sources */,
+				9355B931212EDB7800453262 /* CreateLogin.swift in Sources */,
 				936B7C872111B381009686F6 /* ServerError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

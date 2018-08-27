@@ -8,20 +8,27 @@
 
 import Foundation
 
-class CreateUserLogin: State {
+class CreateLogin: State {
     
     func forward(context: AppContext) {
         
     }
     
     func back(context: AppContext) {
-        
+        context.changeState(state: Login())
     }
     
     func enterState(context: AppContext) {
         let responder: AuthenticationViewResponder = context
         let view = CreateLoginViewController()
         view.responder = responder
+        let loginButton = UIBarButtonItemActionable(title: "Login")
+        loginButton.actionBlock = {
+            [weak self]
+            () -> () in
+            self?.back(context: context)
+        }
+        view.navigationItem.setLeftBarButton(loginButton, animated: true)
         context.present(view: view)
     }
     
