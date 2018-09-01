@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		9336E79A213AAFBB00A62070 /* CreateAssignmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9336E799213AAFBB00A62070 /* CreateAssignmentViewController.swift */; };
 		9336E79E213AB01900A62070 /* CreateAssignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9336E79D213AB01900A62070 /* CreateAssignment.swift */; };
-		9336E7A2213AB32E00A62070 /* CreateLoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9336E7A1213AB32E00A62070 /* CreateLoginRequest.swift */; };
-		9336E7A5213AB35300A62070 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9336E7A3213AB35300A62070 /* LoginRequest.swift */; };
-		9336E7A6213AB35300A62070 /* LoginSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9336E7A4213AB35300A62070 /* LoginSuccess.swift */; };
+		9336E7B3213AB58600A62070 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9336E7B0213AB58600A62070 /* LoginRequest.swift */; };
+		9336E7B4213AB58600A62070 /* CreateLoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9336E7B1213AB58600A62070 /* CreateLoginRequest.swift */; };
+		9336E7B5213AB58600A62070 /* LoginSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9336E7B2213AB58600A62070 /* LoginSuccess.swift */; };
 		9355B92A212ECF9300453262 /* TextViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9355B929212ECF9300453262 /* TextViewFactory.swift */; };
 		9355B92D212ED20800453262 /* UIControlFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9355B92C212ED20800453262 /* UIControlFactory.swift */; };
 		9355B931212EDB7800453262 /* CreateLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9355B930212EDB7800453262 /* CreateLogin.swift */; };
@@ -67,9 +67,9 @@
 /* Begin PBXFileReference section */
 		9336E799213AAFBB00A62070 /* CreateAssignmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAssignmentViewController.swift; sourceTree = "<group>"; };
 		9336E79D213AB01900A62070 /* CreateAssignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAssignment.swift; sourceTree = "<group>"; };
-		9336E7A1213AB32E00A62070 /* CreateLoginRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateLoginRequest.swift; path = Helper/Models/CreateLoginRequest.swift; sourceTree = SOURCE_ROOT; };
-		9336E7A3213AB35300A62070 /* LoginRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginRequest.swift; path = VaporHelper/Sources/App/Models/Login/LoginRequest.swift; sourceTree = SOURCE_ROOT; };
-		9336E7A4213AB35300A62070 /* LoginSuccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginSuccess.swift; path = VaporHelper/Sources/App/Models/Login/LoginSuccess.swift; sourceTree = SOURCE_ROOT; };
+		9336E7B0213AB58600A62070 /* LoginRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginRequest.swift; path = VaporHelper/Sources/App/Models/Login/LoginRequest.swift; sourceTree = SOURCE_ROOT; };
+		9336E7B1213AB58600A62070 /* CreateLoginRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateLoginRequest.swift; path = VaporHelper/Sources/App/Models/Login/CreateLoginRequest.swift; sourceTree = SOURCE_ROOT; };
+		9336E7B2213AB58600A62070 /* LoginSuccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginSuccess.swift; path = VaporHelper/Sources/App/Models/Login/LoginSuccess.swift; sourceTree = SOURCE_ROOT; };
 		9355B929212ECF9300453262 /* TextViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewFactory.swift; sourceTree = "<group>"; };
 		9355B92C212ED20800453262 /* UIControlFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIControlFactory.swift; sourceTree = "<group>"; };
 		9355B930212EDB7800453262 /* CreateLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLogin.swift; sourceTree = "<group>"; };
@@ -143,6 +143,16 @@
 			children = (
 				93E3E3DB212427E300B3419E /* LoginViewController.swift */,
 				9388632C21340E6C007D42F8 /* CreateLoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		9336E7A9213AB50C00A62070 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				9336E7B1213AB58600A62070 /* CreateLoginRequest.swift */,
+				9336E7B0213AB58600A62070 /* LoginRequest.swift */,
+				9336E7B2213AB58600A62070 /* LoginSuccess.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -246,10 +256,8 @@
 		93EE04492108A8BA00005E61 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9336E7A9213AB50C00A62070 /* Login */,
 				9385788C2117769C00AF2106 /* ModelNetworkHandler.swift */,
-				9336E7A3213AB35300A62070 /* LoginRequest.swift */,
-				9336E7A4213AB35300A62070 /* LoginSuccess.swift */,
-				9336E7A1213AB32E00A62070 /* CreateLoginRequest.swift */,
 				936B7C812111B353009686F6 /* Helping.swift */,
 				93B95D00210DB6C5007E57E4 /* Assignment.swift */,
 				93B95CFD210DB6C4007E57E4 /* Location.swift */,
@@ -382,13 +390,13 @@
 				936B7C822111B353009686F6 /* Helping.swift in Sources */,
 				9355B92D212ED20800453262 /* UIControlFactory.swift in Sources */,
 				9355B92A212ECF9300453262 /* TextViewFactory.swift in Sources */,
+				9336E7B4213AB58600A62070 /* CreateLoginRequest.swift in Sources */,
 				93B95D03210DB6C5007E57E4 /* Review.swift in Sources */,
 				9388633221341F44007D42F8 /* AuthenticationViewResponder.swift in Sources */,
 				9355B934212EDFE000453262 /* AssignmentList.swift in Sources */,
 				936CF08E210B640000B7F559 /* TypeAlias.swift in Sources */,
 				93E3E3D5212422DD00B3419E /* AppContext.swift in Sources */,
 				93E3E3DC212427E300B3419E /* LoginViewController.swift in Sources */,
-				9336E7A5213AB35300A62070 /* LoginRequest.swift in Sources */,
 				93EE06A7210B38F200005E61 /* CodableImage.swift in Sources */,
 				9388632D21340E6C007D42F8 /* CreateLoginViewController.swift in Sources */,
 				936B7C842111B369009686F6 /* Result.swift in Sources */,
@@ -403,9 +411,9 @@
 				9355B938212EE1A600453262 /* ButtonClickedResponder.swift in Sources */,
 				9355B931212EDB7800453262 /* CreateLogin.swift in Sources */,
 				936B7C872111B381009686F6 /* ServerError.swift in Sources */,
-				9336E7A6213AB35300A62070 /* LoginSuccess.swift in Sources */,
+				9336E7B5213AB58600A62070 /* LoginSuccess.swift in Sources */,
 				9336E79E213AB01900A62070 /* CreateAssignment.swift in Sources */,
-				9336E7A2213AB32E00A62070 /* CreateLoginRequest.swift in Sources */,
+				9336E7B3213AB58600A62070 /* LoginRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
