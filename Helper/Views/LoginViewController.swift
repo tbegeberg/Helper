@@ -59,11 +59,12 @@ class LoginViewController: UIViewController {
             return
         }
        
-        let userLoginDetail = User(id: nil, username: username, password: password, userID: nil)
-        userLoginDetail.login(model: userLoginDetail) { (result) in
+        let loginRequst = LoginRequest(id: nil, username: username, password: password, userID: nil)
+        loginRequst.login(model: loginRequst) { (result: Result<LoginSuccess>) in
             switch result {
             case .success(let value):
                 print(value)
+                self.responder?.buttonClicked(loginSuccess: value)
             case .error(let error):
                 print(error)
             case .serverError(let error):

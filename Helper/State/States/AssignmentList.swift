@@ -1,5 +1,5 @@
 //
-//  CreateUser.swift
+//  UserAuthenticated.swift
 //  Helper
 //
 //  Created by TørK on 23/08/2018.
@@ -8,7 +8,13 @@
 
 import Foundation
 
-class CreateLogin: State {
+class AssignmentList: State {
+    
+    var loginSuccess: LoginSuccess
+    
+    init(loginSuccess: LoginSuccess) {
+        self.loginSuccess = loginSuccess
+    }
     
     func forward(context: AppContext) {
         
@@ -19,9 +25,7 @@ class CreateLogin: State {
     }
     
     func enterState(context: AppContext) {
-        let responder: AuthenticationViewResponder = context
-        let view = CreateLoginViewController()
-        view.responder = responder
+        let view = AssignmentTableViewController()
         let loginButton = UIBarButtonItemActionable(title: "Login")
         loginButton.actionBlock = {
             [weak self]
@@ -30,11 +34,15 @@ class CreateLogin: State {
         }
         view.navigationItem.setLeftBarButton(loginButton, animated: true)
         context.present(view: view)
+        view.getOwnAssigments(publicUser: loginSuccess)
     }
     
     func buttonClicked(context: AppContext, loginSuccess: LoginSuccess) {
-        context.changeState(state: AssignmentList(loginSuccess: loginSuccess))
         
     }
-    
+   
 }
+
+
+
+

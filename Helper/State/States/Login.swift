@@ -33,8 +33,8 @@ class Login: State {
         context.present(view: view)
     }
     
-    func buttonClicked(context: AppContext, user: User.PublicUser) {
-        context.changeState(state: UserAuthenticated(user: user))
+    func buttonClicked(context: AppContext, loginSuccess: LoginSuccess) {
+        context.changeState(state: AssignmentList(loginSuccess: loginSuccess))
     }
     
 }

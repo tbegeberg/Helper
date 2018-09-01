@@ -10,6 +10,6 @@ import Foundation
 import UIKit
 
 protocol ButtonClickedResponder {
-    func buttonClicked(user: User.PublicUser)
+    func buttonClicked(loginSuccess: LoginSuccess)
 }
  

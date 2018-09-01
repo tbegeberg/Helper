@@ -30,7 +30,8 @@ class ViewController: UIViewController, CodableImage {
         let pic = UIImage(named: "profile")
         let image = self.encodeImage(image: pic!)
         let location = Location(id: nil, latitude: 40.22, longitude: 20.2)
-        
+        /*
+
         let user = User(id: nil, username: "Lars", password: "Password", userID: UUID())
         let assignment = Assignment(id: nil, beneficiaryID: UUID(), assignmentID: UUID(), location: location, headline: "NEED HELP", requirements: "TOOLS", image: nil)
         
@@ -48,6 +49,7 @@ class ViewController: UIViewController, CodableImage {
                 print(value)
             }
         }
+    */
     }
 
 

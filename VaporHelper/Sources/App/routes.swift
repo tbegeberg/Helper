@@ -14,11 +14,14 @@ public func routes(_ router: Router) throws {
     let userController = UserController()
     router.post("createUser", use: userController.create)
     router.post("loginUser", use: userController.loginUser)
+    
 
     let tokenAuthenticationMiddleware = User.tokenAuthMiddleware()
     let guardAuthentication = User.guardAuthMiddleware()
     let authedRoutes = router.grouped([tokenAuthenticationMiddleware, guardAuthentication])
     authedRoutes.get("getAssignment", use: assignmentController.index)
+    authedRoutes.post("postAssignment", use: assignmentController.create)
+    
     
    
 }

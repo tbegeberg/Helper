@@ -10,31 +10,42 @@ import Vapor
 import Authentication
 
 final class UserController {
-   
-    func create(_ request: Request) throws -> Future<User.PublicUser> {
-        return try request.content.decode(User.self).flatMap(to: User.PublicUser.self) { user in
-            let passwordHashed = try request.make(BCryptDigest.self).hash(user.password)
-            let newUser = User(id: nil, username: user.username, password: passwordHashed, userID: user.userID)
-            return newUser.save(on: request).flatMap(to: User.PublicUser.self) { createdUser in
-                let accessToken = try Token.createToken(forUser: createdUser)
-                guard let userIDE = createdUser.userID as? UUID else {
-                    throw "Missing userID"
-                }
-                return accessToken.save(on: request).map(to: User.PublicUser.self) { createdToken in
-                    let publicUser = User.PublicUser(username: createdUser.username, token: createdToken.token, userID: userIDE)
-                    return publicUser
+  
+    
+    func create(_ request: Request) throws -> Future<LoginSuccess> {
+        return try request.content.decode(LoginRequest.self).flatMap { login in
+            let passwordHashed = try request.make(BCryptDigest.self).hash(login.password)
+            guard let userID = login.userID as? UUID else {
+                throw "UserID is not a UUID"
+            }
+            let user = User(id: login.id, username: login.username, password: passwordHashed, userID: userID)
+            return user.save(on: request).flatMap { createdLogin in
+                let accessToken = try Token.createToken(forUser: createdLogin)
+                return accessToken.save(on: request).map { createdToken in
+                    return LoginSuccess(id: nil, username: createdLogin.username, token: createdToken.token, userID: userID)
                 }
             }
         }
     }
     
-    func loginUser(_ request: Request) throws -> Future<User> {
-        return try request.content.decode(User.self).flatMap(to: User.self) { user in
+    
+    
+    
+    func loginUser(_ request: Request) throws -> Future<LoginSuccess> {
+        return try request.content.decode(LoginRequest.self).flatMap(to: LoginSuccess.self) { login in
             let passwordVerifier = try request.make(BCryptDigest.self)
-            return User.authenticate(username: user.username, password: user.password, using: passwordVerifier, on: request).unwrap(or: Abort.init(HTTPResponseStatus.unauthorized))
+            let futureUser = User.authenticate(username: login.username, password: login.password, using: passwordVerifier, on: request).unwrap(or: Abort.init(HTTPResponseStatus.unauthorized))
+            let futureLogin = futureUser.map(to: LoginSuccess.self, { (user) -> LoginSuccess in
+                guard let userID = user.userID as? UUID else {
+                    throw "UserID is not a UUID"
+                }
+                let accessToken = try Token.createToken(forUser: user)
+                accessToken.save(on: request)
+                return LoginSuccess(id: nil, username: user.username, token: accessToken.token, userID: userID)
+            })
+            return futureLogin
         }
     }
-
 }
 
 extension String: LocalizedError {

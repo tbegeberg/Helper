@@ -15,7 +15,7 @@ protocol AppContext: AuthenticationViewResponder {
 }
 
 extension ButtonClickedResponder where Self:AppContext {
-    func buttonClicked(user: User.PublicUser) {
-        self.state?.buttonClicked(context: self, user: user)
+    func buttonClicked(loginSuccess: LoginSuccess) {
+        self.state?.buttonClicked(context: self, loginSuccess: loginSuccess)
     }
 }
