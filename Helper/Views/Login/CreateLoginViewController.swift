@@ -36,7 +36,7 @@ class CreateLoginViewController: LoginViewController {
             return
         }
         
-        let createLogin = LoginRequest(id: nil, username: username, password: password, userID: UUID())
+        let createLogin = CreateLoginRequest(id: nil, username: username, password: password, userID: UUID())
         
         createLogin.createLogin(model: createLogin) { (result: Result<CreateLoginSuccess>) in
             switch result {

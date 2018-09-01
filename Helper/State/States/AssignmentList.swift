@@ -34,7 +34,8 @@ class AssignmentList: State {
         }
         view.navigationItem.setLeftBarButton(loginButton, animated: true)
         context.present(view: view)
-        view.getOwnAssigments(publicUser: loginSuccess)
+        view.getOwnAssigments(loginSuccess: loginSuccess)
+        view.createAssignment(token: loginSuccess.token, beneficiaryID: loginSuccess.userID)
     }
     
     func buttonClicked(context: AppContext, loginSuccess: LoginSuccess) {

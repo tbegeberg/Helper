@@ -11,7 +11,7 @@ struct LoginSuccess: HelperContent {
     var id: Int?
     var username: String
     var token: String
-    let userID: UUID?
+    let userID: UUID
 }
 
 typealias CreateLoginSuccess = LoginSuccess

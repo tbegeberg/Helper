@@ -59,7 +59,7 @@ class LoginViewController: UIViewController {
             return
         }
        
-        let loginRequst = LoginRequest(id: nil, username: username, password: password, userID: nil)
+        let loginRequst = LoginRequest(id: nil, username: username, password: password)
         loginRequst.login(model: loginRequst) { (result: Result<LoginSuccess>) in
             switch result {
             case .success(let value):

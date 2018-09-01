@@ -17,16 +17,16 @@ protocol ModelNetworkHandler {
 }
 
 
-extension LoginRequest {
-
-    func createLogin(model: LoginRequest, completionHandler: @escaping (Result<CreateLoginSuccess>) -> ()) {
+extension CreateLoginRequest {
+    func createLogin(model: CreateLoginRequest, completionHandler: @escaping (Result<CreateLoginSuccess>) -> ()) {
         NetworkHandler.shared.post(post: model, url: "http://localhost:8080/createUser", completionHandler: completionHandler)
     }
-    
+}
+
+extension LoginRequest {
     func login(model: LoginRequest, completionHandler: @escaping (Result<LoginSuccess>) -> ()) {
         NetworkHandler.shared.post(post: model, url: "http://localhost:8080/loginUser", completionHandler: completionHandler)
     }
-    
 }
 
 

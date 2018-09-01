@@ -15,7 +15,6 @@ class AssignmentTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-  
         
     }
 
@@ -27,18 +26,20 @@ class AssignmentTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+    
+        return assigments.count
     }
     
     
     
-    func getOwnAssigments(publicUser: LoginSuccess) {
-        NetworkHandlerAuth.shared.getAuth(url: "http://localhost:8080/getAssignment", token: publicUser.token) { (result: Result<[Assignment]>) in
+    
+    
+    func getOwnAssigments(loginSuccess: LoginSuccess) {
+        NetworkHandlerAuth.shared.getAuth(url: "http://localhost:8080/getAssignment", token: loginSuccess.token) { (result: Result<[Assignment]>) in
             switch result {
             case .success(let value):
                 for assignment in value {
-                    if assignment.beneficiaryID == publicUser.userID {
+                    if assignment.beneficiaryID == loginSuccess.userID {
                         print(assignment)
                     }
                 }
@@ -51,6 +52,23 @@ class AssignmentTableViewController: UITableViewController {
             }
         }
        
+    }
+    
+    func createAssignment(token: String, beneficiaryID: UUID) {
+        let location = Location(id: nil, latitude: 40.22, longitude: 20.2)
+        let assignment = Assignment(id: nil, beneficiaryID: beneficiaryID, assignmentID: UUID(), location: location, headline: "NEED HELP", requirements: "TOOLS", image: nil)
+        NetworkHandlerAuth.shared.postAuth(post: assignment, url: "http://localhost:8080/postAssignment", token: token) { (result: Result<Assignment>) in
+            switch result {
+            case .success(let value):
+                print(value)
+            case .error(let error):
+                print(error)
+            case .serverError(let error):
+                print(error)
+            case .successNoValue(let value):
+                print(value)
+            }
+        }
     }
 
    
