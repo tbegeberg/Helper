@@ -18,4 +18,5 @@ extension ButtonClickedResponder where Self:AppContext {
     func buttonClicked(loginSuccess: LoginSuccess) {
         self.state?.buttonClicked(context: self, loginSuccess: loginSuccess)
     }
+    
 }

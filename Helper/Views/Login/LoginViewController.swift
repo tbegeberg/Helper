@@ -11,7 +11,6 @@ import SnapKit
 
 class LoginViewController: UIViewController {
 
-    let textViewFactory = TextViewFactory()
     let uiControlFactory = UIControlFactory()
     var usernameTextField = UITextField()
     var passwordTextField = UITextField()
@@ -22,12 +21,14 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
         self.title = "Enter Login"
+        let textViewFactory = TextViewFactory()
         
         self.usernameTextField = textViewFactory.buildTextField()
         self.passwordTextField = textViewFactory.buildTextField()
         self.enterButton = uiControlFactory.buildButton(title:"Enter")
 
         self.view.addSubview(usernameTextField)
+        self.usernameTextField.text = "Test"
         self.usernameTextField.placeholder = "Enter Username"
         self.usernameTextField.snp.makeConstraints { (make) in
             make.top.equalTo(self.view).offset(100)
@@ -35,6 +36,7 @@ class LoginViewController: UIViewController {
         }
         
         self.view.addSubview(passwordTextField)
+        self.passwordTextField.text = "1"
         self.passwordTextField.placeholder = "Enter password"
         self.passwordTextField.snp.makeConstraints { (make) in
             make.top.equalTo(self.usernameTextField).offset(40)

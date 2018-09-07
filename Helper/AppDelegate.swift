@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AppContext {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         setupWindow()
-        self.changeState(state: CreateLogin())
+        self.changeState(state: Login())
         return true
     }
 

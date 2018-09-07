@@ -7,19 +7,66 @@
 //
 
 import UIKit
+import SnapKit
 
 class CreateAssignmentViewController: UIViewController {
 
+    var loginCredentials: LoginCredentials?
+    var headlineTextField = UITextField()
+    var requirementsTextField = UITextField()
+    var creatAssignmentButton = UIButton()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.view.backgroundColor = UIColor.white
+        self.title = "Create Assignment"
+        let textViewFactory = TextViewFactory()
+        let uiControlFactory = UIControlFactory()
+        self.headlineTextField = textViewFactory.buildTextField()
+        self.requirementsTextField = textViewFactory.buildTextField()
+        self.creatAssignmentButton = uiControlFactory.buildButton(title: "Create")
+        
+        self.view.addSubview(headlineTextField)
+        self.headlineTextField.placeholder = "Enter Assignment Headline"
+        self.headlineTextField.snp.makeConstraints { (make) in
+            make.top.equalTo(self.view).offset(100)
+            make.centerX.equalTo(self.view)
+        }
+        
+        self.view.addSubview(requirementsTextField)
+        self.requirementsTextField.placeholder = "Enter requirements Headline"
+        self.requirementsTextField.snp.makeConstraints { (make) in
+            make.top.equalTo(self.headlineTextField).offset(100)
+            make.centerX.equalTo(self.view)
+        }
+        
+        self.view.addSubview(creatAssignmentButton)
+        self.creatAssignmentButton.snp.makeConstraints { (make) in
+            make.top.equalTo(self.requirementsTextField).offset(100)
+            make.centerX.equalTo(self.view)
+        }
+        
+        self.creatAssignmentButton.addTarget(self, action: #selector(createButtonClicked), for: UIControlEvents.touchUpInside)
+        
+        
     }
-
-    func createAssignment(token: String, beneficiaryID: UUID) {
+    
+    @objc func createButtonClicked() throws{
+        guard let credentials = self.loginCredentials as? LoginCredentials else {
+            throw ErrorAssignement.noCredentials
+        }
+        
+        guard let headline = self.headlineTextField.text as? String else {
+            throw ErrorAssignement.noHeadline
+        }
+        
+        guard let requirements = self.requirementsTextField.text as? String else {
+            throw ErrorAssignement.noRequirements
+        }
+        
         let location = Location(id: nil, latitude: 40.22, longitude: 20.2)
-        let assignment = Assignment(id: nil, beneficiaryID: beneficiaryID, assignmentID: UUID(), location: location, headline: "NEED HELP", requirements: "TOOLS", image: nil)
-        NetworkHandlerAuth.shared.postAuth(post: assignment, url: "http://localhost:8080/postAssignment", token: token) { (result: Result<Assignment>) in
+        let assignment = Assignment(id: nil, beneficiaryID: credentials.userID, assignmentID: UUID(), location: location, headline: headline, requirements: requirements, image: nil)
+        NetworkHandlerAuth.shared.postAuth(post: assignment, url: "http://localhost:8080/postAssignment", token: credentials.token) { (result: Result<Assignment>) in
             switch result {
             case .success(let value):
                 print(value)

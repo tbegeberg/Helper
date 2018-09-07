@@ -34,7 +34,7 @@ class Login: State {
     }
     
     func buttonClicked(context: AppContext, loginSuccess: LoginSuccess) {
-        context.changeState(state: AssignmentList(loginSuccess: loginSuccess))
+        context.changeState(state: CreateAssignment(loginSuccess: loginSuccess))
     }
     
 }

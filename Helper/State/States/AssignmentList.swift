@@ -21,21 +21,21 @@ class AssignmentList: State {
     }
     
     func back(context: AppContext) {
-        context.changeState(state: Login())
+        context.changeState(state: CreateAssignment(loginSuccess: loginSuccess))
     }
     
     func enterState(context: AppContext) {
         let view = AssignmentTableViewController()
-        let loginButton = UIBarButtonItemActionable(title: "Login")
-        loginButton.actionBlock = {
+        let createAssignmentButton = UIBarButtonItemActionable(title: "Create")
+        createAssignmentButton.actionBlock = {
             [weak self]
             () -> () in
             self?.back(context: context)
         }
-        view.navigationItem.setLeftBarButton(loginButton, animated: true)
+        view.navigationItem.setLeftBarButton(createAssignmentButton, animated: true)
         context.present(view: view)
         view.getOwnAssigments(loginSuccess: loginSuccess)
-        view.createAssignment(token: loginSuccess.token, beneficiaryID: loginSuccess.userID)
+        
     }
     
     func buttonClicked(context: AppContext, loginSuccess: LoginSuccess) {

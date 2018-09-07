@@ -12,6 +12,10 @@
 		9336E7B3213AB58600A62070 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9336E7B0213AB58600A62070 /* LoginRequest.swift */; };
 		9336E7B4213AB58600A62070 /* CreateLoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9336E7B1213AB58600A62070 /* CreateLoginRequest.swift */; };
 		9336E7B5213AB58600A62070 /* LoginSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9336E7B2213AB58600A62070 /* LoginSuccess.swift */; };
+		9336E7B9213EA2FC00A62070 /* BaseListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9336E7B8213EA2FC00A62070 /* BaseListViewController.swift */; };
+		9336E7BD213EA32500A62070 /* Listable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9336E7BC213EA32500A62070 /* Listable.swift */; };
+		9336E7C1213EAA5400A62070 /* AssignmentViewResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9336E7C0213EAA5400A62070 /* AssignmentViewResponder.swift */; };
+		9336E7CC21427BA000A62070 /* ErrorAssignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9336E7CB21427BA000A62070 /* ErrorAssignment.swift */; };
 		9355B92A212ECF9300453262 /* TextViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9355B929212ECF9300453262 /* TextViewFactory.swift */; };
 		9355B92D212ED20800453262 /* UIControlFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9355B92C212ED20800453262 /* UIControlFactory.swift */; };
 		9355B931212EDB7800453262 /* CreateLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9355B930212EDB7800453262 /* CreateLogin.swift */; };
@@ -70,6 +74,10 @@
 		9336E7B0213AB58600A62070 /* LoginRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginRequest.swift; path = VaporHelper/Sources/App/Models/Login/LoginRequest.swift; sourceTree = SOURCE_ROOT; };
 		9336E7B1213AB58600A62070 /* CreateLoginRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateLoginRequest.swift; path = VaporHelper/Sources/App/Models/Login/CreateLoginRequest.swift; sourceTree = SOURCE_ROOT; };
 		9336E7B2213AB58600A62070 /* LoginSuccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginSuccess.swift; path = VaporHelper/Sources/App/Models/Login/LoginSuccess.swift; sourceTree = SOURCE_ROOT; };
+		9336E7B8213EA2FC00A62070 /* BaseListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseListViewController.swift; sourceTree = "<group>"; };
+		9336E7BC213EA32500A62070 /* Listable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Listable.swift; sourceTree = "<group>"; };
+		9336E7C0213EAA5400A62070 /* AssignmentViewResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentViewResponder.swift; sourceTree = "<group>"; };
+		9336E7CB21427BA000A62070 /* ErrorAssignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorAssignment.swift; sourceTree = "<group>"; };
 		9355B929212ECF9300453262 /* TextViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewFactory.swift; sourceTree = "<group>"; };
 		9355B92C212ED20800453262 /* UIControlFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIControlFactory.swift; sourceTree = "<group>"; };
 		9355B930212EDB7800453262 /* CreateLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLogin.swift; sourceTree = "<group>"; };
@@ -157,6 +165,14 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		9336E7C821427B7800A62070 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				9336E7CB21427BA000A62070 /* ErrorAssignment.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
 		9355B926212ECF7600453262 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +216,7 @@
 			children = (
 				9336E79F213AB0E800A62070 /* Login */,
 				9388633721352992007D42F8 /* AssignmentTableViewController.swift */,
+				9336E7B8213EA2FC00A62070 /* BaseListViewController.swift */,
 				9336E799213AAFBB00A62070 /* CreateAssignmentViewController.swift */,
 				93EE04372108A86400005E61 /* ViewController.swift */,
 			);
@@ -235,6 +252,7 @@
 		93EE04342108A86400005E61 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				9336E7C821427B7800A62070 /* Error */,
 				93EE04352108A86400005E61 /* AppDelegate.swift */,
 				93E3E3D02124210600B3419E /* State */,
 				93E3E3DA212427C300B3419E /* Views */,
@@ -257,6 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				9336E7A9213AB50C00A62070 /* Login */,
+				9336E7BC213EA32500A62070 /* Listable.swift */,
 				9385788C2117769C00AF2106 /* ModelNetworkHandler.swift */,
 				936B7C812111B353009686F6 /* Helping.swift */,
 				93B95D00210DB6C5007E57E4 /* Assignment.swift */,
@@ -282,6 +301,7 @@
 				93E3E3D2212422A300B3419E /* ViewProvider.swift */,
 				9355B937212EE1A600453262 /* ButtonClickedResponder.swift */,
 				9388633121341F44007D42F8 /* AuthenticationViewResponder.swift */,
+				9336E7C0213EAA5400A62070 /* AssignmentViewResponder.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -385,7 +405,9 @@
 				936B7C8B2111B3B2009686F6 /* NetworkHandler.swift in Sources */,
 				93B95D04210DB6C5007E57E4 /* Assignment.swift in Sources */,
 				9388633821352992007D42F8 /* AssignmentTableViewController.swift in Sources */,
+				9336E7B9213EA2FC00A62070 /* BaseListViewController.swift in Sources */,
 				93EE04382108A86400005E61 /* ViewController.swift in Sources */,
+				9336E7BD213EA32500A62070 /* Listable.swift in Sources */,
 				93886335213420E2007D42F8 /* UIBarButtonItemActionable.swift in Sources */,
 				936B7C822111B353009686F6 /* Helping.swift in Sources */,
 				9355B92D212ED20800453262 /* UIControlFactory.swift in Sources */,
@@ -401,9 +423,11 @@
 				9388632D21340E6C007D42F8 /* CreateLoginViewController.swift in Sources */,
 				936B7C842111B369009686F6 /* Result.swift in Sources */,
 				93E3E3D7212422FE00B3419E /* State.swift in Sources */,
+				9336E7C1213EAA5400A62070 /* AssignmentViewResponder.swift in Sources */,
 				93EE04362108A86400005E61 /* AppDelegate.swift in Sources */,
 				9385788D2117769C00AF2106 /* ModelNetworkHandler.swift in Sources */,
 				93E3E3D3212422A300B3419E /* ViewProvider.swift in Sources */,
+				9336E7CC21427BA000A62070 /* ErrorAssignment.swift in Sources */,
 				93B95D01210DB6C5007E57E4 /* Location.swift in Sources */,
 				936B7C892111B3A1009686F6 /* NetworkError.swift in Sources */,
 				9336E79A213AAFBB00A62070 /* CreateAssignmentViewController.swift in Sources */,

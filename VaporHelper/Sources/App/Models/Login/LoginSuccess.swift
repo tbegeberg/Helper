@@ -15,3 +15,4 @@ struct LoginSuccess: HelperContent {
 }
 
 typealias CreateLoginSuccess = LoginSuccess
+typealias LoginCredentials = LoginSuccess
