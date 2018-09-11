@@ -8,18 +8,34 @@
 
 import UIKit
 import SnapKit
+import CoreLocation
 
-class CreateAssignmentViewController: UIViewController {
+class CreateAssignmentViewController: UIViewController, CLLocationManagerDelegate {
 
     var loginCredentials: LoginCredentials?
     var headlineTextField = UITextField()
     var requirementsTextField = UITextField()
     var creatAssignmentButton = UIButton()
+    weak var responder: AssignmentViewResponder?
+    let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
         self.title = "Create Assignment"
+        
+        self.locationManager.requestAlwaysAuthorization()
+        self.locationManager.requestWhenInUseAuthorization()
+        
+        if (CLLocationManager.locationServicesEnabled())
+        {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.requestAlwaysAuthorization()
+            locationManager.startUpdatingLocation()
+            locationManager.stopUpdatingLocation()
+        }
+        
         let textViewFactory = TextViewFactory()
         let uiControlFactory = UIControlFactory()
         self.headlineTextField = textViewFactory.buildTextField()
@@ -64,12 +80,17 @@ class CreateAssignmentViewController: UIViewController {
             throw ErrorAssignement.noRequirements
         }
         
-        let location = Location(id: nil, latitude: 40.22, longitude: 20.2)
+        guard let newLocation = locationManager.location as? CLLocation else {
+            throw ErrorAssignement.noLocation
+        }
+        
+        let location = Location(id: nil, latitude: newLocation.coordinate.latitude, longitude: newLocation.coordinate.longitude)
         let assignment = Assignment(id: nil, beneficiaryID: credentials.userID, assignmentID: UUID(), location: location, headline: headline, requirements: requirements, image: nil)
         NetworkHandlerAuth.shared.postAuth(post: assignment, url: "http://localhost:8080/postAssignment", token: credentials.token) { (result: Result<Assignment>) in
             switch result {
             case .success(let value):
                 print(value)
+                self.responder?.createAssignment()
             case .error(let error):
                 print(error)
             case .serverError(let error):

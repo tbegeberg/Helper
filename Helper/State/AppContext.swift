@@ -8,15 +8,21 @@
 
 import Foundation
 
-protocol AppContext: AuthenticationViewResponder {
+protocol AppContext: AuthenticationViewResponder, AssignmentViewResponder {
     var state:State? { get set }
     func present(view: ViewProvider)
     func changeState(state: State)
 }
 
 extension ButtonClickedResponder where Self:AppContext {
-    func buttonClicked(loginSuccess: LoginSuccess) {
+    func createLogin(loginSuccess: LoginSuccess) {
         self.state?.buttonClicked(context: self, loginSuccess: loginSuccess)
+    }
+    func login(loginSuccess: LoginSuccess) {
+        self.state?.buttonClicked(context: self, loginSuccess: loginSuccess)
+    }
+    func createAssignment() {
+        self.state?.back(context: self)
     }
     
 }

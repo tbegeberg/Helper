@@ -32,7 +32,7 @@
 		9388632D21340E6C007D42F8 /* CreateLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9388632C21340E6C007D42F8 /* CreateLoginViewController.swift */; };
 		9388633221341F44007D42F8 /* AuthenticationViewResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9388633121341F44007D42F8 /* AuthenticationViewResponder.swift */; };
 		93886335213420E2007D42F8 /* UIBarButtonItemActionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93886334213420E2007D42F8 /* UIBarButtonItemActionable.swift */; };
-		9388633821352992007D42F8 /* AssignmentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9388633721352992007D42F8 /* AssignmentTableViewController.swift */; };
+		9388633821352992007D42F8 /* AssignmentListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9388633721352992007D42F8 /* AssignmentListTableViewController.swift */; };
 		93B95D01210DB6C5007E57E4 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B95CFD210DB6C4007E57E4 /* Location.swift */; };
 		93B95D03210DB6C5007E57E4 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B95CFF210DB6C4007E57E4 /* Review.swift */; };
 		93B95D04210DB6C5007E57E4 /* Assignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B95D00210DB6C5007E57E4 /* Assignment.swift */; };
@@ -49,6 +49,9 @@
 		93EE043D2108A86500005E61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93EE043C2108A86500005E61 /* Assets.xcassets */; };
 		93EE04402108A86500005E61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93EE043E2108A86500005E61 /* LaunchScreen.storyboard */; };
 		93EE06A7210B38F200005E61 /* CodableImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EE06A6210B38F200005E61 /* CodableImage.swift */; };
+		93F2FF752147E6DB0091AB56 /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 93E3E3E6212573D800B3419E /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		93F2FF7B2147ECCA0091AB56 /* LocationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F2FF7A2147ECCA0091AB56 /* LocationHandler.swift */; };
+		93F2FF7D2147F6120091AB56 /* DoAssignmentListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F2FF7C2147F6120091AB56 /* DoAssignmentListTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,7 +69,28 @@
 			remoteGlobalIDString = EEBCC9E219CC627E0083B827;
 			remoteInfo = "SnapKit Tests";
 		};
+		93F2FF762147E6DB0091AB56 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 93E3E3E0212573D800B3419E /* SnapKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = EEBCC9D719CC627D0083B827;
+			remoteInfo = SnapKit;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		93F2FF782147E6DB0091AB56 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				93F2FF752147E6DB0091AB56 /* SnapKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		9336E799213AAFBB00A62070 /* CreateAssignmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAssignmentViewController.swift; sourceTree = "<group>"; };
@@ -94,7 +118,7 @@
 		9388632C21340E6C007D42F8 /* CreateLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLoginViewController.swift; sourceTree = "<group>"; };
 		9388633121341F44007D42F8 /* AuthenticationViewResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewResponder.swift; sourceTree = "<group>"; };
 		93886334213420E2007D42F8 /* UIBarButtonItemActionable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBarButtonItemActionable.swift; sourceTree = "<group>"; };
-		9388633721352992007D42F8 /* AssignmentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentTableViewController.swift; sourceTree = "<group>"; };
+		9388633721352992007D42F8 /* AssignmentListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentListTableViewController.swift; sourceTree = "<group>"; };
 		93B95CFD210DB6C4007E57E4 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Location.swift; path = VaporHelper/Sources/App/Models/Location.swift; sourceTree = SOURCE_ROOT; };
 		93B95CFF210DB6C4007E57E4 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Review.swift; path = VaporHelper/Sources/App/Models/Review.swift; sourceTree = SOURCE_ROOT; };
 		93B95D00210DB6C5007E57E4 /* Assignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Assignment.swift; path = VaporHelper/Sources/App/Models/Assignment.swift; sourceTree = SOURCE_ROOT; };
@@ -113,6 +137,8 @@
 		93EE043F2108A86500005E61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		93EE04412108A86500005E61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93EE06A6210B38F200005E61 /* CodableImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableImage.swift; sourceTree = "<group>"; };
+		93F2FF7A2147ECCA0091AB56 /* LocationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHandler.swift; sourceTree = "<group>"; };
+		93F2FF7C2147F6120091AB56 /* DoAssignmentListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoAssignmentListTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,8 +231,8 @@
 			children = (
 				93E3E3DE21256F3A00B3419E /* Login.swift */,
 				9355B930212EDB7800453262 /* CreateLogin.swift */,
-				9336E79D213AB01900A62070 /* CreateAssignment.swift */,
 				9355B933212EDFE000453262 /* AssignmentList.swift */,
+				9336E79D213AB01900A62070 /* CreateAssignment.swift */,
 			);
 			path = States;
 			sourceTree = "<group>";
@@ -214,10 +240,9 @@
 		93E3E3DA212427C300B3419E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				93F2FF7E2147F62E0091AB56 /* Assignment */,
 				9336E79F213AB0E800A62070 /* Login */,
-				9388633721352992007D42F8 /* AssignmentTableViewController.swift */,
 				9336E7B8213EA2FC00A62070 /* BaseListViewController.swift */,
-				9336E799213AAFBB00A62070 /* CreateAssignmentViewController.swift */,
 				93EE04372108A86400005E61 /* ViewController.swift */,
 			);
 			path = Views;
@@ -252,6 +277,7 @@
 		93EE04342108A86400005E61 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				93F2FF792147EC6D0091AB56 /* Location */,
 				9336E7C821427B7800A62070 /* Error */,
 				93EE04352108A86400005E61 /* AppDelegate.swift */,
 				93E3E3D02124210600B3419E /* State */,
@@ -306,6 +332,24 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		93F2FF792147EC6D0091AB56 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				93F2FF7A2147ECCA0091AB56 /* LocationHandler.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		93F2FF7E2147F62E0091AB56 /* Assignment */ = {
+			isa = PBXGroup;
+			children = (
+				9388633721352992007D42F8 /* AssignmentListTableViewController.swift */,
+				93F2FF7C2147F6120091AB56 /* DoAssignmentListTableViewController.swift */,
+				9336E799213AAFBB00A62070 /* CreateAssignmentViewController.swift */,
+			);
+			path = Assignment;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -316,10 +360,12 @@
 				93EE042E2108A86400005E61 /* Sources */,
 				93EE042F2108A86400005E61 /* Frameworks */,
 				93EE04302108A86400005E61 /* Resources */,
+				93F2FF782147E6DB0091AB56 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				93F2FF772147E6DB0091AB56 /* PBXTargetDependency */,
 			);
 			name = Helper;
 			productName = Helper;
@@ -404,7 +450,7 @@
 				93E3E3DF21256F3A00B3419E /* Login.swift in Sources */,
 				936B7C8B2111B3B2009686F6 /* NetworkHandler.swift in Sources */,
 				93B95D04210DB6C5007E57E4 /* Assignment.swift in Sources */,
-				9388633821352992007D42F8 /* AssignmentTableViewController.swift in Sources */,
+				9388633821352992007D42F8 /* AssignmentListTableViewController.swift in Sources */,
 				9336E7B9213EA2FC00A62070 /* BaseListViewController.swift in Sources */,
 				93EE04382108A86400005E61 /* ViewController.swift in Sources */,
 				9336E7BD213EA32500A62070 /* Listable.swift in Sources */,
@@ -415,6 +461,7 @@
 				9336E7B4213AB58600A62070 /* CreateLoginRequest.swift in Sources */,
 				93B95D03210DB6C5007E57E4 /* Review.swift in Sources */,
 				9388633221341F44007D42F8 /* AuthenticationViewResponder.swift in Sources */,
+				93F2FF7B2147ECCA0091AB56 /* LocationHandler.swift in Sources */,
 				9355B934212EDFE000453262 /* AssignmentList.swift in Sources */,
 				936CF08E210B640000B7F559 /* TypeAlias.swift in Sources */,
 				93E3E3D5212422DD00B3419E /* AppContext.swift in Sources */,
@@ -426,6 +473,7 @@
 				9336E7C1213EAA5400A62070 /* AssignmentViewResponder.swift in Sources */,
 				93EE04362108A86400005E61 /* AppDelegate.swift in Sources */,
 				9385788D2117769C00AF2106 /* ModelNetworkHandler.swift in Sources */,
+				93F2FF7D2147F6120091AB56 /* DoAssignmentListTableViewController.swift in Sources */,
 				93E3E3D3212422A300B3419E /* ViewProvider.swift in Sources */,
 				9336E7CC21427BA000A62070 /* ErrorAssignment.swift in Sources */,
 				93B95D01210DB6C5007E57E4 /* Location.swift in Sources */,
@@ -442,6 +490,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		93F2FF772147E6DB0091AB56 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SnapKit;
+			targetProxy = 93F2FF762147E6DB0091AB56 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		93EE04392108A86400005E61 /* Main.storyboard */ = {
@@ -580,8 +636,10 @@
 		93EE04452108A86500005E61 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 43VK6D6P6Y;
 				INFOPLIST_FILE = Helper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -597,8 +655,10 @@
 		93EE04462108A86500005E61 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 43VK6D6P6Y;
 				INFOPLIST_FILE = Helper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

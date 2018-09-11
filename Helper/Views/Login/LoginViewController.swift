@@ -66,7 +66,7 @@ class LoginViewController: UIViewController {
             switch result {
             case .success(let value):
                 print(value)
-                self.responder?.buttonClicked(loginSuccess: value)
+                self.responder?.login(loginSuccess: value)
             case .error(let error):
                 print(error)
             case .serverError(let error):

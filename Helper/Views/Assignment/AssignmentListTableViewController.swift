@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AssignmentTableViewController: BaseListViewController {
+class AssignmentListTableViewController: BaseListViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()

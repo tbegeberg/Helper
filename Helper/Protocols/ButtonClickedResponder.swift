@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 
 protocol ButtonClickedResponder {
-    func buttonClicked(loginSuccess: LoginSuccess)
+    func createLogin(loginSuccess: LoginSuccess)
+    func login(loginSuccess: LoginSuccess)
+    func createAssignment()
 }
  

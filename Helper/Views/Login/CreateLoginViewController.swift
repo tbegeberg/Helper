@@ -41,7 +41,7 @@ class CreateLoginViewController: LoginViewController {
         createLogin.createLogin(model: createLogin) { (result: Result<CreateLoginSuccess>) in
             switch result {
             case .success(let value):
-                self.responder?.buttonClicked(loginSuccess: value)
+                self.responder?.createLogin(loginSuccess: value)
             case .error(let error):
                 print(error)
             case .serverError(let error):

@@ -25,8 +25,10 @@ class CreateAssignment: State {
     }
     
     func enterState(context: AppContext) {
+        let responder: AssignmentViewResponder = context
         let view = CreateAssignmentViewController()
         view.loginCredentials = self.loginSuccess
+        view.responder = responder
         let listAssignmentButton = UIBarButtonItemActionable(title: "Assignments")
         listAssignmentButton.actionBlock = {
             [weak self]

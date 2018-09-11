@@ -25,7 +25,7 @@ class AssignmentList: State {
     }
     
     func enterState(context: AppContext) {
-        let view = AssignmentTableViewController()
+        let view = AssignmentListTableViewController()
         let createAssignmentButton = UIBarButtonItemActionable(title: "Create")
         createAssignmentButton.actionBlock = {
             [weak self]

@@ -12,5 +12,5 @@ enum ErrorAssignement: Error {
     case noCredentials
     case noHeadline
     case noRequirements
-    
+    case noLocation
 }
