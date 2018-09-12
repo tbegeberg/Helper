@@ -16,10 +16,6 @@ class BaseLocationViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         self.view.backgroundColor = UIColor.white
-        
-        self.locationManager.requestAlwaysAuthorization()
-        self.locationManager.requestWhenInUseAuthorization()
-       
         if (CLLocationManager.locationServicesEnabled())
         {
             locationManager.delegate = self
@@ -28,10 +24,5 @@ class BaseLocationViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.startUpdatingLocation()
             locationManager.stopUpdatingLocation()
         }
-    
-        
     }
-    
-    
-    
 }

@@ -7,15 +7,26 @@
 //
 
 import UIKit
+import CoreLocation
 
-class BaseListViewController: UITableViewController {
+class BaseListViewController: UITableViewController, CLLocationManagerDelegate {
     
     var list = [Listable]()
+    let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         self.tableView.reloadData()
+        if (CLLocationManager.locationServicesEnabled())
+        {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.requestAlwaysAuthorization()
+            locationManager.startUpdatingLocation()
+            locationManager.stopUpdatingLocation()
+        }
+        print(self.locationManager.location?.coordinate)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

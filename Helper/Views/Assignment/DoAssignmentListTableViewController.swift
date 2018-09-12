@@ -9,24 +9,12 @@
 import UIKit
 import CoreLocation
 
-class DoAssignmentListTableViewController: BaseListViewController, CLLocationManagerDelegate {
+class DoAssignmentListTableViewController: BaseListViewController {
 
-    let locationManager = CLLocationManager()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.locationManager.requestAlwaysAuthorization()
-        self.locationManager.requestWhenInUseAuthorization()
-        
-        if (CLLocationManager.locationServicesEnabled())
-        {
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            locationManager.requestAlwaysAuthorization()
-            locationManager.startUpdatingLocation()
-           
-        }
-        print(self.locationManager.location?.coordinate)
     }
 
    
@@ -40,12 +28,10 @@ class DoAssignmentListTableViewController: BaseListViewController, CLLocationMan
                         guard let distance = self.locationManager.location?.distance(from: location) as? Double else {
                             return
                         }
-                        if distance > 5000 {
-                            print("to far away")
-                        } else {
+                        if distance < 5000 {
                             self.list.append(assignment)
                             self.tableView.reloadData()
-                        }
+                        } 
                     }
                 }
             case .error(let error):
