@@ -21,7 +21,7 @@ class CreateAssignment: State {
     }
     
     func back(context: AppContext) {
-        context.changeState(state: AssignmentList(loginSuccess: loginSuccess))
+        context.changeState(state: ShowOwnAssignment(loginSuccess: loginSuccess))
     }
     
     func enterState(context: AppContext) {

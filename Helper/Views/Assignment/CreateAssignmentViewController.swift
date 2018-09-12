@@ -10,31 +10,18 @@ import UIKit
 import SnapKit
 import CoreLocation
 
-class CreateAssignmentViewController: UIViewController, CLLocationManagerDelegate {
+class CreateAssignmentViewController: BaseLocationViewController {
 
     var loginCredentials: LoginCredentials?
     var headlineTextField = UITextField()
     var requirementsTextField = UITextField()
     var creatAssignmentButton = UIButton()
     weak var responder: AssignmentViewResponder?
-    let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
         self.title = "Create Assignment"
-        
-        self.locationManager.requestAlwaysAuthorization()
-        self.locationManager.requestWhenInUseAuthorization()
-        
-        if (CLLocationManager.locationServicesEnabled())
-        {
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            locationManager.requestAlwaysAuthorization()
-            locationManager.startUpdatingLocation()
-            locationManager.stopUpdatingLocation()
-        }
         
         let textViewFactory = TextViewFactory()
         let uiControlFactory = UIControlFactory()

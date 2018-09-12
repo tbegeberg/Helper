@@ -19,7 +19,7 @@
 		9355B92A212ECF9300453262 /* TextViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9355B929212ECF9300453262 /* TextViewFactory.swift */; };
 		9355B92D212ED20800453262 /* UIControlFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9355B92C212ED20800453262 /* UIControlFactory.swift */; };
 		9355B931212EDB7800453262 /* CreateLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9355B930212EDB7800453262 /* CreateLogin.swift */; };
-		9355B934212EDFE000453262 /* AssignmentList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9355B933212EDFE000453262 /* AssignmentList.swift */; };
+		9355B934212EDFE000453262 /* ShowOwnAssignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9355B933212EDFE000453262 /* ShowOwnAssignment.swift */; };
 		9355B938212EE1A600453262 /* ButtonClickedResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9355B937212EE1A600453262 /* ButtonClickedResponder.swift */; };
 		936B7C822111B353009686F6 /* Helping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936B7C812111B353009686F6 /* Helping.swift */; };
 		936B7C842111B369009686F6 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936B7C832111B369009686F6 /* Result.swift */; };
@@ -52,6 +52,8 @@
 		93F2FF752147E6DB0091AB56 /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 93E3E3E6212573D800B3419E /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		93F2FF7B2147ECCA0091AB56 /* LocationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F2FF7A2147ECCA0091AB56 /* LocationHandler.swift */; };
 		93F2FF7D2147F6120091AB56 /* DoAssignmentListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F2FF7C2147F6120091AB56 /* DoAssignmentListTableViewController.swift */; };
+		93F2FF8221493A040091AB56 /* DoAssignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F2FF8121493A040091AB56 /* DoAssignment.swift */; };
+		93F2FF8421493E010091AB56 /* BaseLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F2FF8321493E010091AB56 /* BaseLocationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,7 +107,7 @@
 		9355B929212ECF9300453262 /* TextViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewFactory.swift; sourceTree = "<group>"; };
 		9355B92C212ED20800453262 /* UIControlFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIControlFactory.swift; sourceTree = "<group>"; };
 		9355B930212EDB7800453262 /* CreateLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLogin.swift; sourceTree = "<group>"; };
-		9355B933212EDFE000453262 /* AssignmentList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentList.swift; sourceTree = "<group>"; };
+		9355B933212EDFE000453262 /* ShowOwnAssignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowOwnAssignment.swift; sourceTree = "<group>"; };
 		9355B937212EE1A600453262 /* ButtonClickedResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonClickedResponder.swift; sourceTree = "<group>"; };
 		936B7C812111B353009686F6 /* Helping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Helping.swift; path = VaporHelper/Sources/App/Models/Helping.swift; sourceTree = SOURCE_ROOT; };
 		936B7C832111B369009686F6 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
@@ -139,6 +141,8 @@
 		93EE06A6210B38F200005E61 /* CodableImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableImage.swift; sourceTree = "<group>"; };
 		93F2FF7A2147ECCA0091AB56 /* LocationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHandler.swift; sourceTree = "<group>"; };
 		93F2FF7C2147F6120091AB56 /* DoAssignmentListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoAssignmentListTableViewController.swift; sourceTree = "<group>"; };
+		93F2FF8121493A040091AB56 /* DoAssignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoAssignment.swift; sourceTree = "<group>"; };
+		93F2FF8321493E010091AB56 /* BaseLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLocationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,8 +235,9 @@
 			children = (
 				93E3E3DE21256F3A00B3419E /* Login.swift */,
 				9355B930212EDB7800453262 /* CreateLogin.swift */,
-				9355B933212EDFE000453262 /* AssignmentList.swift */,
+				9355B933212EDFE000453262 /* ShowOwnAssignment.swift */,
 				9336E79D213AB01900A62070 /* CreateAssignment.swift */,
+				93F2FF8121493A040091AB56 /* DoAssignment.swift */,
 			);
 			path = States;
 			sourceTree = "<group>";
@@ -243,6 +248,7 @@
 				93F2FF7E2147F62E0091AB56 /* Assignment */,
 				9336E79F213AB0E800A62070 /* Login */,
 				9336E7B8213EA2FC00A62070 /* BaseListViewController.swift */,
+				93F2FF8321493E010091AB56 /* BaseLocationViewController.swift */,
 				93EE04372108A86400005E61 /* ViewController.swift */,
 			);
 			path = Views;
@@ -456,18 +462,20 @@
 				9336E7BD213EA32500A62070 /* Listable.swift in Sources */,
 				93886335213420E2007D42F8 /* UIBarButtonItemActionable.swift in Sources */,
 				936B7C822111B353009686F6 /* Helping.swift in Sources */,
+				93F2FF8421493E010091AB56 /* BaseLocationViewController.swift in Sources */,
 				9355B92D212ED20800453262 /* UIControlFactory.swift in Sources */,
 				9355B92A212ECF9300453262 /* TextViewFactory.swift in Sources */,
 				9336E7B4213AB58600A62070 /* CreateLoginRequest.swift in Sources */,
 				93B95D03210DB6C5007E57E4 /* Review.swift in Sources */,
 				9388633221341F44007D42F8 /* AuthenticationViewResponder.swift in Sources */,
 				93F2FF7B2147ECCA0091AB56 /* LocationHandler.swift in Sources */,
-				9355B934212EDFE000453262 /* AssignmentList.swift in Sources */,
+				9355B934212EDFE000453262 /* ShowOwnAssignment.swift in Sources */,
 				936CF08E210B640000B7F559 /* TypeAlias.swift in Sources */,
 				93E3E3D5212422DD00B3419E /* AppContext.swift in Sources */,
 				93E3E3DC212427E300B3419E /* LoginViewController.swift in Sources */,
 				93EE06A7210B38F200005E61 /* CodableImage.swift in Sources */,
 				9388632D21340E6C007D42F8 /* CreateLoginViewController.swift in Sources */,
+				93F2FF8221493A040091AB56 /* DoAssignment.swift in Sources */,
 				936B7C842111B369009686F6 /* Result.swift in Sources */,
 				93E3E3D7212422FE00B3419E /* State.swift in Sources */,
 				9336E7C1213EAA5400A62070 /* AssignmentViewResponder.swift in Sources */,

@@ -1,14 +1,14 @@
 //
-//  UserAuthenticated.swift
+//  DoAssignments.swift
 //  Helper
 //
-//  Created by TørK on 23/08/2018.
+//  Created by TørK on 12/09/2018.
 //  Copyright © 2018 Tørk Egeberg. All rights reserved.
 //
 
 import Foundation
 
-class AssignmentList: State {
+class DoAssignment: State {
     
     var loginSuccess: LoginSuccess
     
@@ -21,29 +21,23 @@ class AssignmentList: State {
     }
     
     func back(context: AppContext) {
-        context.changeState(state: CreateAssignment(loginSuccess: loginSuccess))
+        context.changeState(state: ShowOwnAssignment(loginSuccess: loginSuccess))
     }
     
     func enterState(context: AppContext) {
-        let view = AssignmentListTableViewController()
-        let createAssignmentButton = UIBarButtonItemActionable(title: "Create")
-        createAssignmentButton.actionBlock = {
+        let view = DoAssignmentListTableViewController()
+        let listAssignmentButton = UIBarButtonItemActionable(title: "Assignments")
+        listAssignmentButton.actionBlock = {
             [weak self]
             () -> () in
             self?.back(context: context)
         }
-        view.navigationItem.setLeftBarButton(createAssignmentButton, animated: true)
+        view.navigationItem.setLeftBarButton(listAssignmentButton, animated: true)
+        view.getAssigments(loginSuccess: loginSuccess)
         context.present(view: view)
-        view.getOwnAssigments(loginSuccess: loginSuccess)
-        
     }
     
     func buttonClicked(context: AppContext, loginSuccess: LoginSuccess) {
         
     }
-   
 }
-
-
-
-
