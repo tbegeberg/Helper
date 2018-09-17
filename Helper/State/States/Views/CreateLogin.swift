@@ -33,7 +33,7 @@ class CreateLogin: State {
     }
     
     func buttonClicked(context: AppContext, loginSuccess: LoginSuccess) {
-        context.changeState(state: ShowOwnAssignment(loginCredentials: loginSuccess))
+        context.changeState(state: LoadAssignment(loginCredentials: loginSuccess))
         
     }
     

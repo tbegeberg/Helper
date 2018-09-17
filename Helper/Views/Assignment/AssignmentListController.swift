@@ -7,33 +7,53 @@
 //
 
 import UIKit
+import CoreLocation
 
-class AssignmentListController: BaseListViewController {
+class AssignmentListController: UITableViewController {
+    
+    var list = [Listable]()
+    var assignment = [Assignment]()
+    var location = CLLocation()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-
-
-    func getOwnAssigments(loginSuccess: LoginSuccess) {
-        NetworkHandlerAuth.shared.getAuth(url: "http://localhost:8080/getAssignment", token: loginSuccess.token) { (result: Result<[Assignment]>) in
-            switch result {
-            case .success(let value):
-                for assignment in value {
-                    if assignment.beneficiaryID == loginSuccess.userID {
-                        self.list.append(assignment)
-                        self.tableView.reloadData()
-                    }
-                }
-            case .error(let error):
-                print(error)
-            case .serverError(let error):
-                print(error)
-            case .successNoValue(let value):
-                print(value)
-            }
-        }
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        self.tableView.reloadData()
        
     }
     
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return list.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let list = self.list[indexPath.row]
+        cell.textLabel?.text = "\(list.title) - \(list.subtitle)"
+        return cell
+    }
+
+    func listOwnAssignments(loginCredentials: LoginCredentials) {
+        for value in self.assignment {
+            if value.beneficiaryID == loginCredentials.userID {
+                self.list.append(value)
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    func listOthersAssignments(loginCredentials: LoginCredentials) {
+        for assignment in self.assignment {
+            if assignment.beneficiaryID != loginCredentials.userID {
+                let location = CLLocation(latitude: assignment.location.latitude, longitude: assignment.location.longitude)
+                guard let distance = self.location.distance(from: location) as? Double else {
+                    return
+                }
+                if distance < 5000 {
+                    self.list.append(assignment)
+                    self.tableView.reloadData()
+                }
+            }
+        }
+    }
 }

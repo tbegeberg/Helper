@@ -10,10 +10,12 @@ import Foundation
 
 class AcceptAssignment: State {
     
-    var loginSuccess: LoginSuccess
+    var assigment: [Assignment]
+    var loginCredentials: LoginCredentials
     
-    init(loginSuccess: LoginSuccess) {
-        self.loginSuccess = loginSuccess
+    init(assigment: [Assignment], loginCredentials: LoginCredentials) {
+        self.assigment = assigment
+        self.loginCredentials = loginCredentials
     }
     
     func forward(context: AppContext) {
@@ -21,11 +23,12 @@ class AcceptAssignment: State {
     }
     
     func back(context: AppContext) {
-        context.changeState(state: ShowOwnAssignment(loginCredentials: loginSuccess))
+        context.changeState(state: LoadAssignment(loginCredentials: self.loginCredentials))
     }
     
     func enterState(context: AppContext) {
-        let view = AcceptAssignmentListController()
+        let view = AssignmentListController()
+        view.assignment = self.assigment
         let listAssignmentButton = UIBarButtonItemActionable(title: "Assignments")
         listAssignmentButton.actionBlock = {
             [weak self]
@@ -33,7 +36,7 @@ class AcceptAssignment: State {
             self?.back(context: context)
         }
         view.navigationItem.setLeftBarButton(listAssignmentButton, animated: true)
-        view.getOthersAssigments(loginSuccess: loginSuccess)
+        view.listOthersAssignments(loginCredentials: loginCredentials)
         context.present(view: view)
     }
     

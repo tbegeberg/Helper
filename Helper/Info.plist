@@ -41,6 +41,8 @@
 	</dict>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>The app will use your location</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>The app will use your location</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>The app will use your location</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>

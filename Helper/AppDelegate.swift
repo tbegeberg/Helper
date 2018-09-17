@@ -17,9 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, AppContext {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         setupWindow()
-        let locationManager = CLLocationManager()
-        locationManager.requestAlwaysAuthorization()
-        locationManager.requestWhenInUseAuthorization()
         self.changeState(state: Login())
         return true
     }

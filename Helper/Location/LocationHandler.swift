@@ -9,29 +9,39 @@
 import Foundation
 import CoreLocation
 
-class LocationHandler {
+class LocationHandler: NSObject, CLLocationManagerDelegate {
     
     let locationManager = CLLocationManager()
+    static let shared = LocationHandler()
     
-    func setupLocationManager(delegate: CLLocationManagerDelegate) {
-        self.locationManager.requestAlwaysAuthorization()
-        self.locationManager.requestWhenInUseAuthorization()
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.delegate = delegate
-            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+    private override init () {
+        super.init()
+        locationManager.requestAlwaysAuthorization()
+        locationManager.requestWhenInUseAuthorization()
+        if (CLLocationManager.locationServicesEnabled())
+        {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.requestAlwaysAuthorization()
             locationManager.startUpdatingLocation()
+            locationManager.stopUpdatingLocation()
         }
     }
     
-    
-    func getLocation() -> Location {
-        
-        
-        let location = Location(id: nil, latitude: 1, longitude: 1)
+
+    func getLocation() throws -> CLLocation  {
+        guard let location = locationManager.location else {
+            throw ErrorLocation.NoLocation
+        }
         return location
     }
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let locValue:CLLocationCoordinate2D = manager.location!.coordinate
+    func getDistance(location: CLLocation) throws -> Double {
+        guard let distance = self.locationManager.location?.distance(from: location) else {
+            throw ErrorLocation.NoLocation
+        }
+        return distance
+        
     }
+    
 }
