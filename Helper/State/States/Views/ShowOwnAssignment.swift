@@ -10,22 +10,22 @@ import Foundation
 
 class ShowOwnAssignment: State {
     
-    var loginSuccess: LoginSuccess
+    var loginCredentials: LoginCredentials
     
-    init(loginSuccess: LoginSuccess) {
-        self.loginSuccess = loginSuccess
+    init(loginCredentials: LoginCredentials) {
+        self.loginCredentials = loginCredentials
     }
     
     func forward(context: AppContext) {
-        context.changeState(state: DoAssignment(loginSuccess: loginSuccess))
+        context.changeState(state: AcceptAssignment(loginSuccess: loginCredentials))
     }
     
     func back(context: AppContext) {
-        context.changeState(state: CreateAssignment(loginSuccess: loginSuccess))
+        context.changeState(state: CreateAssignment(loginSuccess: loginCredentials))
     }
     
     func enterState(context: AppContext) {
-        let view = AssignmentListTableViewController()
+        let view = AssignmentListController()
         let createAssignmentButton = UIBarButtonItemActionable(title: "Create")
         let doAssignmentButton = UIBarButtonItemActionable(title: "Do")
         createAssignmentButton.actionBlock = {
@@ -40,9 +40,9 @@ class ShowOwnAssignment: State {
         }
         view.navigationItem.setLeftBarButton(createAssignmentButton, animated: true)
         view.navigationItem.setRightBarButton(doAssignmentButton, animated: true)
+        view.getAssigments(loginCredentials: self.loginCredentials)
+        view.listOwnAssignments(loginCredentials: self.loginCredentials)
         context.present(view: view)
-        view.getOwnAssigments(loginSuccess: loginSuccess)
-        
     }
     
     func buttonClicked(context: AppContext, loginSuccess: LoginSuccess) {

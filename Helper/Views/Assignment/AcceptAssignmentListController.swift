@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-class DoAssignmentListTableViewController: BaseListViewController {
+class AcceptAssignmentListController: BaseListViewController {
 
     
     

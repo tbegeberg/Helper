@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-class BaseListViewController: UITableViewController, CLLocationManagerDelegate {
+class BaseTableViewController: UITableViewController, CLLocationManagerDelegate {
     
     var list = [Listable]()
     let locationManager = CLLocationManager()
